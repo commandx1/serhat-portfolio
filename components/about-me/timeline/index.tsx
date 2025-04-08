@@ -95,6 +95,16 @@ export default function CustomizedTimeline() {
             targetTime: number;
 
             constructor() {
+                this.x = 0;
+                this.y = 0;
+                this.addedX = 0;
+                this.addedY = 0;
+                this.rad = 0;
+                this.lightInputMultiplier = 0;
+                this.color = '';
+                this.cumulativeTime = 0;
+                this.time = 0;
+                this.targetTime = 0;
                 this.reset();
             }
 
