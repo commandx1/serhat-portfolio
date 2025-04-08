@@ -35,17 +35,6 @@
 .errText {
     color: #ff4566;
     margin-left: 12px;
-}
-
-.bordered {
     position: relative;
-
-    &::before {
-        content: '';
-        width: calc(100% - 16px);
-        border-bottom: 1px dashed #ff4566;
-        position: absolute;
-        left: 16px;
-        bottom: 0;
-    }
+    z-index: 2;
 }
