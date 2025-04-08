@@ -1,0 +1,19 @@
+{
+    "HomePage": {
+        "Hey": "Selam, ben Serhat, full stack developer'ım",
+        "Desc": "Temiz tasarımı sağlam arka uç mantığıyla harmanlayarak sıfırdan ölçeklenebilir web uygulamaları oluşturuyorum."
+    },
+    "NavbarItems": {
+        "Home": "Anasayfa",
+        "AboutMe": "Hakkımda",
+        "MyProjects": "Projelerim"
+    },
+    "Footer": {
+        "By": "ile yapıldı",
+        "Made": "Serhat tarafından"
+    },
+    "ABOUT": {
+        "SummaryTitle": "Özet",
+        "Summary": "Front-end geliştirmeye güçlü bir şekilde odaklanan ve kusursuz, ölçeklenebilir ve kullanıcı dostu web uygulamaları oluşturma tutkusuna sahip full-stack bir geliştiriciyim. Modern JavaScript kütüphanelerinde sahip olduğum tecrübe ile (özellikle React ve Next.js) tasarımları piksel mükemmelliğinde, duyarlı arayüzlere dönüştürme yetkinliğine sahibim. Figma, Zeplin veya Photoshop olsun, her ayrıntının doğru bir şekilde uygulanmasını sağlarım. Arka uçta, ölçeklenebilir API'ler ve gerçek zamanlı uygulamalar oluşturarak Node.js ve MongoDB ile çalışmayı tercih ediyorum. Projelerimde sürdürülebilirliği ve tür güvenliğini iyileştirmek için TypeScript'i kullanıyorum ve sağlam ve verimli kod tabanları sağlıyorum. Kodlamanın ötesinde, iş akışlarını optimize etmekten, temiz mimariler yapılandırmaktan ve geliştirme verimliliğini artırmak için sürekli olarak yeni teknolojileri keşfetmekten hoşlanıyorum. Bağlantı kuralım ve birlikte harika işler çıkartalım!"
+    }
+}

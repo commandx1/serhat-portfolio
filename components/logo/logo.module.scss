@@ -1,0 +1,87 @@
+.logo {
+    z-index: 99;
+
+    path:nth-child(1) {
+        stroke-dasharray: 720px;
+        stroke-dashoffset: 720px;
+        animation: line-anim1 4s ease infinite alternate;
+    }
+
+    path:nth-child(2) {
+        stroke-dasharray: 607;
+        stroke-dashoffset: 607;
+        animation: line-anim2 4s ease infinite alternate;
+    }
+
+    path:nth-child(3) {
+        stroke-dasharray: 510px;
+        stroke-dashoffset: 510px;
+        animation: line-anim3 4s ease infinite alternate;
+    }
+}
+
+@keyframes line-anim1 {
+    0% {
+        stroke-dashoffset: 720px;
+        fill: transparent;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    90% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+}
+
+@keyframes line-anim2 {
+    0% {
+        stroke-dashoffset: 607px;
+        fill: transparent;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    90% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+}
+
+@keyframes line-anim3 {
+    0% {
+        stroke-dashoffset: 510px;
+        fill: transparent;
+    }
+
+    60% {
+        stroke-dashoffset: 0;
+        fill: transparent;
+    }
+
+    90% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+        fill: var(--lightGreen);
+    }
+}

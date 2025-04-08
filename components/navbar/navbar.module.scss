@@ -1,0 +1,125 @@
+.header {
+    width: 100%;
+    position: fixed;
+    padding: 20px 0;
+    top: 0;
+    left: 0;
+    background: rgba(255, 255, 255, 0.1);
+    border-bottom: 2px solid rgba($color: var(--lightGreen), $alpha: 0.2);
+    z-index: 14;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba($color: #4ade80, $alpha: 0.3), transparent);
+        transition: .5s;
+        pointer-events: none;
+    }
+
+    &:hover::before {
+        left: 100%;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .nav {
+        display: flex;
+        align-items: center;
+
+        img {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+
+        a {
+            font-size: 18px;
+            position: relative;
+            display: block;
+            text-transform: uppercase;
+            transition: .5s;
+            padding: 10px 20px;
+            color: var(--lightGreen);
+            font-weight: bold;
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border-top: 1px solid var(--lightGreen);
+                border-bottom: 1px solid var(--lightGreen);
+                transform: scaleY(2);
+                opacity: 0;
+                transition: .5s;
+                z-index: -1;
+            }
+
+            &:hover {
+                color: var(--darkGreen);
+            }
+
+            &:hover::before {
+                transform: scaleY(1.2);
+                opacity: 1;
+            }
+
+            &::after {
+                content: '';
+                position: absolute;
+                top: 1px;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: var(--lightGreen);
+                transform: scale(0);
+                transition: .5s;
+                z-index: -1;
+            }
+
+            &:hover::after {
+                transform: scale(1);
+            }
+        }
+
+        :global(.activeLink) {
+            color: var(--darkGreen);
+
+            &::after {
+                transform: scale(1);
+            }
+        }
+
+        .selectedLang {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--lightGreen);
+            font-size: 18px;
+            color: var(--darkGreen);
+            padding: 2px 8px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+    }
+
+    @media only screen and (max-width: 1200px) {
+        .nav {
+            display: none;
+        }
+    }
+}

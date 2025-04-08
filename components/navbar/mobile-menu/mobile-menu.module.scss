@@ -1,0 +1,109 @@
+.mobileMenu {
+    display: none;
+
+    .hamburgerBtn {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 48px;
+        height: 48px;
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        z-index: 15;
+
+        div {
+            width: 50px;
+            height: 3px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+            transition: all .5s ease-in-out;
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                width: 50px;
+                height: 3px;
+                background: #fff;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(255, 101, 47, .2);
+                transition: all .5s ease-in-out;
+            }
+
+            &::before {
+                transform: translateY(-12px);
+            }
+
+            &::after {
+                transform: translateY(12px);
+            }
+        }
+    }
+
+    .hamburgerBtn.active {
+        div {
+            transform: translateX(-50px);
+            background: transparent;
+            box-shadow: none;
+
+            &::before {
+                transform: rotate(45deg) translate(35px, -35px);
+            }
+
+            &::after {
+                transform: rotate(-45deg) translate(35px, 35px);
+            }
+        }
+    }
+
+    .menuDropdown {
+        transform: translateY(50%);
+        opacity: 0;
+        transition: .5s;
+        pointer-events: none;
+
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 14;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: rgba(0, 0, 0, 0.95);
+        border-bottom: 2px solid rgba($color: var(--lightGreen), $alpha: 0.2);
+
+        a,
+        section {
+            position: relative;
+            display: block;
+            color: transparent;
+            -webkit-text-stroke: 1px var(--lightGreen);
+            font-size: calc(60vw / 10 * 1.8);
+        }
+
+        :global(.activeLink) {
+            color: var(--lightGreen);
+        }
+
+        img {
+            display: none;
+        }
+    }
+
+    .menuDropdown.active {
+        pointer-events: visible;
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .mobileMenu {
+        display: block;
+    }
+}

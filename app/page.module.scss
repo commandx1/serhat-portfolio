@@ -1,0 +1,71 @@
+.main {
+    position: fixed;
+    top: 88px;
+    left: 0;
+    width: 100vw;
+    height: calc(100% - 88px);
+    z-index: 12;
+    overflow: hidden auto;
+
+    &::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar {
+        width: 10px;
+        background-color: #F5F5F5;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--darkGreen);
+        background-image: -webkit-linear-gradient(45deg,
+                rgba(255, 255, 255, .2) 25%,
+                transparent 25%,
+                transparent 50%,
+                rgba(255, 255, 255, .2) 50%,
+                rgba(255, 255, 255, .2) 75%,
+                transparent 75%,
+                transparent)
+    }
+
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10vh 0;
+}
+
+.banner {
+    width: 100%;
+    height: 100%;
+
+    .bannerContent {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        justify-content: flex-start;
+        padding-top: 25%;
+
+
+        @media only screen and (max-width: 1200px) {
+            padding-top: 0%;
+        }
+
+        .dash {
+            width: 25%;
+
+            &::before {
+                height: 2px;
+            }
+        }
+
+        .desc {
+            font-size: 2em;
+            -webkit-text-stroke: 1px var(--lightGreen);
+        }
+    }
+}
