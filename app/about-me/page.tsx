@@ -2,6 +2,8 @@ import { Container, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
+import CustomizedTimeline from '@/components/about-me/timeline';
+import PersonalLinks from '@/components/personal-links';
 import {
     ExpressSVG,
     MongoSVG,
@@ -16,8 +18,6 @@ import me from '@/public/whp2.png';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 
 import styles from './about.module.scss';
-import CustomizedTimeline from '@/components/about-me/timeline';
-import PersonalLinks from '@/components/personal-links';
 
 const About = () => {
     const t = useTranslations('ABOUT');
