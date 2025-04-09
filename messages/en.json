@@ -15,5 +15,19 @@
     "ABOUT": {
         "SummaryTitle": "Professional Summary",
         "Summary": "I’m a fullstack developer with a strong focus on frontend development and a passion for crafting seamless, scalable, and user-friendly web applications. With expertise in modern JavaScript libraries—especially React and Next.js—I excel at translating designs into pixelperfect, responsive interfaces. Whether it's Figma, Zeplin, or Photoshop, I ensure every detail is accurately implemented. On the backend, I prefer working with Node.js and MongoDB, building scalable APIs and real-time applications. Lately, I’ve been leveraging TypeScript to improve maintainability and type safety in my projects, ensuring robust and efficient codebases. Beyond coding, I enjoy optimizing workflows, structuring clean architectures, and continuously exploring new technologies to enhance development efficiency. Let’s connect and create something great together!"
+    },
+    "ContactMe": {
+        "Title": "Contact Me",
+        "Desc": "I would be happy to assist you with anything you need. Feel free to reach out to me anytime!",
+        "AddressTitle": "Address",
+        "EmailTitle": "Email",
+        "PhoneTitle": "Phone",
+        "FormTitle": "Send Message",
+        "NameLabel": "Full Name",
+        "EmailLabel": "Email",
+        "TextareaLabel": "Message",
+        "ButtonText": "Send",
+        "ButtonTextSending": "Sending",
+        "SuccessMessage": "Your message has been sent successfully!"
     }
 }

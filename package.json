@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@emotion/cache": "^11.14.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
@@ -27,7 +28,8 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-intersection-observer": "^9.16.0",
-    "react-typed": "^2.0.12"
+    "react-typed": "^2.0.12",
+    "smooth-scrollbar": "^8.8.4"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

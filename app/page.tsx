@@ -2,7 +2,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { useTranslations } from 'next-intl';
 
-import PersonalLinks from '@/components/personal-links';
+import ContactForm from '@/components/contact-form';
 import Typed from '@/components/typed/typed';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 
@@ -12,7 +12,7 @@ export default function Home() {
     const t = useTranslations('HomePage');
 
     return (
-        <>
+        <div className={styles.homeWrapper}>
             <Container className={styles.home}>
                 <Grid className={styles.banner} container spacing={8}>
                     <Grid size={{ xs: 12, lg: 6 }}>
@@ -29,11 +29,11 @@ export default function Home() {
                             <Typed />
                         </AnimatedDiv>
                     </Grid>
-                    <AnimatedDiv>
-                        <PersonalLinks />
-                    </AnimatedDiv>
                 </Grid>
             </Container>
-        </>
+            <AnimatedDiv threshold={0.2}>
+                <ContactForm />
+            </AnimatedDiv>
+        </div>
     );
 }

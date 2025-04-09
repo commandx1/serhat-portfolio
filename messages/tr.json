@@ -15,5 +15,19 @@
     "ABOUT": {
         "SummaryTitle": "Özet",
         "Summary": "Front-end geliştirmeye güçlü bir şekilde odaklanan ve kusursuz, ölçeklenebilir ve kullanıcı dostu web uygulamaları oluşturma tutkusuna sahip full-stack bir geliştiriciyim. Modern JavaScript kütüphanelerinde sahip olduğum tecrübe ile (özellikle React ve Next.js) tasarımları piksel mükemmelliğinde, duyarlı arayüzlere dönüştürme yetkinliğine sahibim. Figma, Zeplin veya Photoshop olsun, her ayrıntının doğru bir şekilde uygulanmasını sağlarım. Arka uçta, ölçeklenebilir API'ler ve gerçek zamanlı uygulamalar oluşturarak Node.js ve MongoDB ile çalışmayı tercih ediyorum. Projelerimde sürdürülebilirliği ve tür güvenliğini iyileştirmek için TypeScript'i kullanıyorum ve sağlam ve verimli kod tabanları sağlıyorum. Kodlamanın ötesinde, iş akışlarını optimize etmekten, temiz mimariler yapılandırmaktan ve geliştirme verimliliğini artırmak için sürekli olarak yeni teknolojileri keşfetmekten hoşlanıyorum. Bağlantı kuralım ve birlikte harika işler çıkartalım!"
+    },
+    "ContactMe": {
+        "Title": "Bana Ulaşın",
+        "Desc": "İhtiyacınız olan her konuda yardımcı olmaktan mutluluk duyarız. Bize her zaman ulaşabilirsiniz!",
+        "AddressTitle": "Adres",
+        "EmailTitle": "Email",
+        "PhoneTitle": "Telefon",
+        "FormTitle": "Mesaj Gönder",
+        "NameLabel": "İsim",
+        "EmailLabel": "Email",
+        "TextareaLabel": "Mesaj",
+        "ButtonText": "Gönder",
+        "ButtonTextSending": "Gönderiliyor",
+        "SuccessMessage": "Mesajınız başarıyla gönderildi!"
     }
 }

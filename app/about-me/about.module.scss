@@ -50,9 +50,18 @@
     }
 }
 
+.aboutWrapper {
+    width: 100%;
+    height: 100%;
+    overflow: hidden auto;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
 
 .about {
-    min-height: calc(100% - 4rem);
+    min-height: calc(100vh - 88px - 4rem);
     margin: 2rem auto;
     display: grid;
     place-items: center;

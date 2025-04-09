@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import CustomizedTimeline from '@/components/about-me/timeline';
-import PersonalLinks from '@/components/personal-links';
+import ContactForm from '@/components/contact-form';
 import {
     ExpressSVG,
     MongoSVG,
@@ -22,7 +22,7 @@ import styles from './about.module.scss';
 const About = () => {
     const t = useTranslations('ABOUT');
     return (
-        <>
+        <div className={styles.aboutWrapper}>
             <div className={styles.about}>
                 <Container>
                     <Grid container spacing={8}>
@@ -95,12 +95,10 @@ const About = () => {
                 </Container>
             </section>
             <CustomizedTimeline />
-            <AnimatedDiv>
-                <div style={{ display: 'grid', placeItems: 'center', marginBottom: '5rem' }}>
-                    <PersonalLinks />
-                </div>
+            <AnimatedDiv threshold={0.2}>
+                <ContactForm />
             </AnimatedDiv>
-        </>
+        </div>
     );
 };
 

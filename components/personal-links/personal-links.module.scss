@@ -3,6 +3,8 @@
     gap: 4px;
     z-index: 6;
     position: relative;
+    margin-top: 24px;
+
     li {
         list-style: none;
         position: relative;
@@ -111,8 +113,4 @@
             }
         }
     }
-}
-
-div:has(.list) {
-    margin: auto;
 }
