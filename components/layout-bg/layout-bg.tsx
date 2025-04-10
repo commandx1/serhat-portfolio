@@ -5,7 +5,6 @@ import { useEffect, useRef } from 'react';
 import Scrollbar from 'smooth-scrollbar';
 
 import aboutClasses from '@/app/about-me/about.module.scss';
-import projectClasses from '@/app/my-projects/my-projects.module.scss';
 import homeClasses from '@/app/page.module.scss';
 
 import styles from './layout-bg.module.scss';
@@ -36,10 +35,10 @@ const LayoutBg = () => {
             initScrollbar(aboutMe);
         }
 
-        if (pathname === '/my-projects') {
-            const myProjects = document.querySelector(`.${projectClasses.projectsWrapper}`) as HTMLDivElement;
-            initScrollbar(myProjects);
-        }
+        // if (pathname === '/my-projects') {
+        //     const myProjects = document.querySelector(`.${projectClasses.projectsWrapper}`) as HTMLDivElement;
+        //     initScrollbar(myProjects);
+        // }
     }, [pathname]);
 
     useEffect(() => {

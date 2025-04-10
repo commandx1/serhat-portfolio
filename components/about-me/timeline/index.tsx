@@ -10,6 +10,7 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import { useEffect } from 'react';
 
 import avena from '@/public/avena_network_logo.jpg';
@@ -20,6 +21,8 @@ import styles from './timeline.module.scss';
 export default function CustomizedTimeline() {
     const theme = useTheme();
     const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
+
+    const t = useTranslations('AboutMe');
     useEffect(() => {
         // Canvas initialization
         const c = document.getElementById('canv') as HTMLCanvasElement;
@@ -218,6 +221,9 @@ export default function CustomizedTimeline() {
         <div className={styles.timeline}>
             <canvas id='canv'></canvas>
 
+            <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
+                {t('TimelineTitle')}
+            </Typography>
             <Timeline
                 sx={
                     isSmallScreen

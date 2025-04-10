@@ -109,7 +109,7 @@
         place-items: center;
 
         &::after {
-            content: 'Skills';
+            content: attr(data-text);
             position: absolute;
             font-size: 2em;
             text-transform: uppercase;

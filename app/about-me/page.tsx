@@ -20,7 +20,7 @@ import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 import styles from './about.module.scss';
 
 const About = () => {
-    const t = useTranslations('ABOUT');
+    const t = useTranslations('AboutMe');
     return (
         <div className={styles.aboutWrapper}>
             <div className={styles.about}>
@@ -48,7 +48,7 @@ const About = () => {
 
             <section className={styles.skills}>
                 <Container>
-                    <div className={styles.box}>
+                    <div className={styles.box} data-text={t('SkillsTitle')}>
                         <div className={styles.svg}>
                             <div
                                 style={{ transform: 'rotate(calc(360deg / 8))' }}
