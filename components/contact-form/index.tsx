@@ -1,64 +1,21 @@
 'use client';
 
-import emailjs from '@emailjs/browser';
 import MailIcon from '@mui/icons-material/MailOutline';
 import MapIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import PhoneIcon from '@mui/icons-material/PhoneOutlined';
-import { Alert, Snackbar } from '@mui/material';
+import { Alert, Button, Snackbar } from '@mui/material';
 import { useTranslations } from 'next-intl';
-import { ChangeEvent, FormEvent, useState } from 'react';
 
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
-import { emailjsCredentials } from '@/utils/credentials';
 
 import PersonalLinks from '../personal-links';
 import styles from './contact-form.module.scss';
+import useForm from './useForm';
 
 const ContactForm = () => {
-    const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        message: '',
-    });
-
-    const [loading, setLoading] = useState(false);
-    const [sent, setSent] = useState(false);
-
     const t = useTranslations('ContactMe');
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-        setFormData(prev => ({
-            ...prev,
-            [e.target.name]: e.target.value,
-        }));
-    };
-
-    const handleSubmit = async (e: FormEvent) => {
-        e.preventDefault();
-        setLoading(true);
-        setSent(false);
-
-        try {
-            await emailjs.send(
-                emailjsCredentials.serviceId,
-                emailjsCredentials.templateId,
-                {
-                    user_name: formData.name,
-                    user_email: formData.email,
-                    user_message: formData.message,
-                },
-                emailjsCredentials.publicKey
-            );
-
-            setSent(true);
-            setFormData({ name: '', email: '', message: '' });
-        } catch (err) {
-            // eslint-disable-next-line no-console
-            console.error('Email error:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
+    const { handleChange, handleSubmit, sent, loading, setSent, formData } = useForm();
 
     return (
         <AnimatedDiv>
@@ -129,9 +86,9 @@ const ContactForm = () => {
                                 <textarea name='message' value={formData.message} onChange={handleChange} required />
                                 <span>{t('TextareaLabel')}</span>
                             </div>
-                            <button type='submit' disabled={loading}>
-                                {loading ? t('ButtonTextSending') : t('ButtonText')}
-                            </button>
+                            <Button variant='contained' color='success' loading={loading} type='submit'>
+                                {t('ButtonText')}
+                            </Button>
                         </form>
                     </div>
                 </div>
