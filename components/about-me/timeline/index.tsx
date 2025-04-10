@@ -15,6 +15,7 @@ import { useEffect } from 'react';
 
 import avena from '@/public/avena_network_logo.jpg';
 import bynogame from '@/public/bynogame_logo.jpg';
+import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 
 import styles from './timeline.module.scss';
 
@@ -218,136 +219,138 @@ export default function CustomizedTimeline() {
     }, []);
 
     return (
-        <div className={styles.timeline}>
-            <canvas id='canv'></canvas>
+        <AnimatedDiv>
+            <div className={styles.timeline}>
+                <canvas id='canv'></canvas>
 
-            <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
-                {t('TimelineTitle')}
-            </Typography>
-            <Timeline
-                sx={
-                    isSmallScreen
-                        ? {
-                            [`& .${timelineItemClasses.root}:before`]: {
-                                flex: 0,
-                                padding: 0,
-                            },
-                        }
-                        : {}
-                }
-                position={isSmallScreen ? 'right' : 'alternate'}>
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineConnector />
-                        <TimelineDot>
-                            <Image src={avena} alt='avena' />
-                        </TimelineDot>
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant='h6' component='span'>
-                            AVENA
-                        </Typography>
-                        <Typography>
-                            - Developed and maintained a MERN stack application to improve accessibility and consistency
-                            in oral health care services across the U.S.
-                        </Typography>
-                        <Typography>
-                            - Implemented core features including appointment scheduling, user account management,
-                            reporting modules, and dynamic dashboard interfaces.
-                        </Typography>
-                        <Typography>
-                            - Integrated medical imaging formats such as FMX, PANO, and DX into the frontend using
-                            React.js for a seamless clinical experience.
-                        </Typography>
-                        <Typography>
-                            - Built and managed background jobs using Node.js and cron to automate tasks such as daily
-                            reporting, auto-submissions, and account cleanups.
-                        </Typography>
-                        <Typography>
-                            - Designed and implemented a modular task management system, triggered both in real-time and
-                            via background jobs, to notify users of pending actions across various modules.
-                        </Typography>
-                        <Typography>
-                            - Developed and optimized dynamic, filterable, and categorized data visualizations using
-                            React Chart.js 2 for dashboards, providing insightful graphical representations of complex
-                            data.
-                        </Typography>
-                        <Typography>
-                            - Developed a roles and permissions module to control access to different parts of the
-                            application based on user roles, including the ability to manage permissions and edit roles
-                            for specific users.
-                        </Typography>
-                        <Typography>
-                            - Created and maintained a settings page to allow admins to configure filters, job
-                            parameters, and schedules for background jobs, ensuring customizable and efficient task
-                            automation.
-                        </Typography>
-                        <Typography>
-                            - Wrote and executed data migration scripts to support schema changes and ensure data
-                            integrity during feature updates.
-                        </Typography>
-                        <Typography>
-                            - Worked extensively with MongoDB to handle large datasets and complex queries, optimizing
-                            performance through effective indexing and query tuning.
-                        </Typography>
-                        <Typography>
-                            - Ensured accurate timezone handling across all U.S. regions to maintain consistency in
-                            scheduling and reporting.
-                        </Typography>
-                    </TimelineContent>
-                </TimelineItem>
-                <TimelineItem>
-                    <TimelineSeparator>
-                        <TimelineConnector />
-                        <TimelineDot color='primary'>
-                            <Image src={bynogame} alt='bynogame' />
-                        </TimelineDot>
-                        <TimelineConnector />
-                    </TimelineSeparator>
-                    <TimelineContent sx={{ py: '12px', px: 2 }}>
-                        <Typography variant='h6' component='span'>
-                            BYNOGAME
-                        </Typography>
-                        <Typography>
-                            Converted Figma designs into responsive, pixel-perfect user interfaces using HTML, CSS,
-                            jQuery, and JavaScript -
-                        </Typography>
-                        <Typography>
-                            Developed and maintained a responsive web application for the trading of in-game items and
-                            accounts across popular games such as Knight, CS:GO, Metin2, PUBG, and Valorant -
-                        </Typography>
-                        <Typography>
-                            Implemented dynamic features and enhanced user interactivity through jQuery, ensuring a
-                            smooth user experience across multiple browsers and devices -
-                        </Typography>
-                        <Typography>
-                            Collaborated closely with backend developers working with Laravel to integrate frontend with
-                            APIs and ensure seamless data flow between client and server -
-                        </Typography>
-                        <Typography>
-                            Focused on optimizing frontend performance and accessibility while maintaining clean and
-                            maintainable code -
-                        </Typography>
-                        <Typography>
-                            Ensured the site was fully responsive, providing a seamless experience on both desktop and
-                            mobile devices -
-                        </Typography>
-                        <Typography>
-                            Implemented SEO best practices, including optimizing meta tags, image alt attributes, and
-                            URL structures to improve search engine visibility and ranking -
-                        </Typography>
-                        <Typography>
-                            Actively contributed to the development process by submitting pull requests for code
-                            changes, collaborating with the team to ensure high-quality code -
-                        </Typography>
-                        <Typography>
-                            Managed tasks and tracked project progress using Jira, adhering to agile methodologies and
-                            ensuring timely delivery of features and bug fixes -
-                        </Typography>
-                    </TimelineContent>
-                </TimelineItem>
-            </Timeline>
-        </div>
+                <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
+                    {t('TimelineTitle')}
+                </Typography>
+                <Timeline
+                    sx={
+                        isSmallScreen
+                            ? {
+                                [`& .${timelineItemClasses.root}:before`]: {
+                                    flex: 0,
+                                    padding: 0,
+                                },
+                            }
+                            : {}
+                    }
+                    position={isSmallScreen ? 'right' : 'alternate'}>
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineConnector />
+                            <TimelineDot>
+                                <Image src={avena} alt='avena' />
+                            </TimelineDot>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ py: '12px', px: 2 }}>
+                            <Typography variant='h6' component='span'>
+                                AVENA
+                            </Typography>
+                            <Typography>
+                                - Developed and maintained a MERN stack application to improve accessibility and
+                                consistency in oral health care services across the U.S.
+                            </Typography>
+                            <Typography>
+                                - Implemented core features including appointment scheduling, user account management,
+                                reporting modules, and dynamic dashboard interfaces.
+                            </Typography>
+                            <Typography>
+                                - Integrated medical imaging formats such as FMX, PANO, and DX into the frontend using
+                                React.js for a seamless clinical experience.
+                            </Typography>
+                            <Typography>
+                                - Built and managed background jobs using Node.js and cron to automate tasks such as
+                                daily reporting, auto-submissions, and account cleanups.
+                            </Typography>
+                            <Typography>
+                                - Designed and implemented a modular task management system, triggered both in real-time
+                                and via background jobs, to notify users of pending actions across various modules.
+                            </Typography>
+                            <Typography>
+                                - Developed and optimized dynamic, filterable, and categorized data visualizations using
+                                React Chart.js 2 for dashboards, providing insightful graphical representations of
+                                complex data.
+                            </Typography>
+                            <Typography>
+                                - Developed a roles and permissions module to control access to different parts of the
+                                application based on user roles, including the ability to manage permissions and edit
+                                roles for specific users.
+                            </Typography>
+                            <Typography>
+                                - Created and maintained a settings page to allow admins to configure filters, job
+                                parameters, and schedules for background jobs, ensuring customizable and efficient task
+                                automation.
+                            </Typography>
+                            <Typography>
+                                - Wrote and executed data migration scripts to support schema changes and ensure data
+                                integrity during feature updates.
+                            </Typography>
+                            <Typography>
+                                - Worked extensively with MongoDB to handle large datasets and complex queries,
+                                optimizing performance through effective indexing and query tuning.
+                            </Typography>
+                            <Typography>
+                                - Ensured accurate timezone handling across all U.S. regions to maintain consistency in
+                                scheduling and reporting.
+                            </Typography>
+                        </TimelineContent>
+                    </TimelineItem>
+                    <TimelineItem>
+                        <TimelineSeparator>
+                            <TimelineConnector />
+                            <TimelineDot color='primary'>
+                                <Image src={bynogame} alt='bynogame' />
+                            </TimelineDot>
+                            <TimelineConnector />
+                        </TimelineSeparator>
+                        <TimelineContent sx={{ py: '12px', px: 2 }}>
+                            <Typography variant='h6' component='span'>
+                                BYNOGAME
+                            </Typography>
+                            <Typography>
+                                Converted Figma designs into responsive, pixel-perfect user interfaces using HTML, CSS,
+                                jQuery, and JavaScript -
+                            </Typography>
+                            <Typography>
+                                Developed and maintained a responsive web application for the trading of in-game items
+                                and accounts across popular games such as Knight, CS:GO, Metin2, PUBG, and Valorant -
+                            </Typography>
+                            <Typography>
+                                Implemented dynamic features and enhanced user interactivity through jQuery, ensuring a
+                                smooth user experience across multiple browsers and devices -
+                            </Typography>
+                            <Typography>
+                                Collaborated closely with backend developers working with Laravel to integrate frontend
+                                with APIs and ensure seamless data flow between client and server -
+                            </Typography>
+                            <Typography>
+                                Focused on optimizing frontend performance and accessibility while maintaining clean and
+                                maintainable code -
+                            </Typography>
+                            <Typography>
+                                Ensured the site was fully responsive, providing a seamless experience on both desktop
+                                and mobile devices -
+                            </Typography>
+                            <Typography>
+                                Implemented SEO best practices, including optimizing meta tags, image alt attributes,
+                                and URL structures to improve search engine visibility and ranking -
+                            </Typography>
+                            <Typography>
+                                Actively contributed to the development process by submitting pull requests for code
+                                changes, collaborating with the team to ensure high-quality code -
+                            </Typography>
+                            <Typography>
+                                Managed tasks and tracked project progress using Jira, adhering to agile methodologies
+                                and ensuring timely delivery of features and bug fixes -
+                            </Typography>
+                        </TimelineContent>
+                    </TimelineItem>
+                </Timeline>
+            </div>
+        </AnimatedDiv>
     );
 }

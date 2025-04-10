@@ -1,45 +1,11 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { useEffect, useRef } from 'react';
-import Scrollbar from 'smooth-scrollbar';
-
-import aboutClasses from '@/app/about-me/about.module.scss';
-import homeClasses from '@/app/page.module.scss';
 
 import styles from './layout-bg.module.scss';
 
 const LayoutBg = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-
-    const pathname = usePathname();
-
-    useEffect(() => {
-        const initScrollbar = (el: HTMLDivElement) => {
-            if (el) {
-                if (Scrollbar.get(el)) {
-                    Scrollbar.destroy(el);
-                }
-
-                Scrollbar.init(el);
-            }
-        };
-
-        if (pathname === '/') {
-            const home = document.querySelector(`.${homeClasses.homeWrapper}`) as HTMLDivElement;
-            initScrollbar(home);
-        }
-
-        if (pathname === '/about-me') {
-            const aboutMe = document.querySelector(`.${aboutClasses.aboutWrapper}`) as HTMLDivElement;
-            initScrollbar(aboutMe);
-        }
-
-        // if (pathname === '/my-projects') {
-        //     const myProjects = document.querySelector(`.${projectClasses.projectsWrapper}`) as HTMLDivElement;
-        //     initScrollbar(myProjects);
-        // }
-    }, [pathname]);
 
     useEffect(() => {
         if (!canvasRef.current || typeof window === undefined) return;

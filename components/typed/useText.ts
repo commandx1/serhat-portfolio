@@ -26,17 +26,21 @@ const useText = () => {
 
     useEffect(() => {
         const showErrorMessages = async () => {
-            await timeout(3800);
-            err1Ref.current!.style.display = 'block';
+            if (err1Ref.current) {
+                await timeout(3800);
+                err1Ref.current.style.display = 'block';
 
-            await timeout(3100);
-            err1Ref.current!.style.display = 'none';
+                await timeout(3100);
+                err1Ref.current.style.display = 'none';
+            }
 
-            await timeout(2130);
-            err2Ref.current!.style.display = 'block';
+            if (err2Ref.current) {
+                await timeout(2130);
+                err2Ref.current.style.display = 'block';
 
-            await timeout(2900);
-            err2Ref.current!.style.display = 'none';
+                await timeout(2900);
+                err2Ref.current.style.display = 'none';
+            }
         };
 
         showErrorMessages();

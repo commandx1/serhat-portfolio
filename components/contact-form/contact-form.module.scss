@@ -6,9 +6,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: url(../../public/serhat_ankara.jpg);
-    background-size: cover;
-    background-position: center;
     position: relative;
     margin-bottom: 300px;
 
@@ -20,7 +17,10 @@
         width: 100%;
         height: 100%;
         pointer-events: none;
-        background: rgba($color: #000, $alpha: 0.4);
+        background: url(../../public/night.jpg);
+        background-size: cover;
+        background-position: center;
+        opacity: .3;
     }
 
     .content {

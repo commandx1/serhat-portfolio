@@ -8,6 +8,7 @@ import { Alert, Snackbar } from '@mui/material';
 import { useTranslations } from 'next-intl';
 import { ChangeEvent, FormEvent, useState } from 'react';
 
+import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 import { emailjsCredentials } from '@/utils/credentials';
 
 import PersonalLinks from '../personal-links';
@@ -60,7 +61,7 @@ const ContactForm = () => {
     };
 
     return (
-        <>
+        <AnimatedDiv>
             <Snackbar
                 open={sent}
                 style={{ zIndex: 99999 }}
@@ -135,7 +136,7 @@ const ContactForm = () => {
                     </div>
                 </div>
             </section>
-        </>
+        </AnimatedDiv>
     );
 };
 
