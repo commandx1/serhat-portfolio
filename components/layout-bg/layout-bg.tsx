@@ -217,6 +217,18 @@ const LayoutBg = () => {
         window.addEventListener('resize', setCanvasSize);
     }, []);
 
+    useEffect(() => {
+        const hasVisited = sessionStorage.getItem('hasVisitedPortfolio');
+
+        fetch(`/api/visit?hasVisited=${hasVisited ? 'true' : 'false'}`)
+            .then(res => res.json())
+            .then(() => {
+                if (!hasVisited) {
+                    sessionStorage.setItem('hasVisitedPortfolio', 'true');
+                }
+            });
+    }, []);
+
     return (
         <>
             <div className={styles.landscape} />
