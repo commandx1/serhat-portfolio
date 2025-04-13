@@ -1,6 +1,7 @@
 import { MongoClient } from 'mongodb';
 
-const uri = process.env.NEXT_PUBLIC_MONGODB_URI!;
+import { mongoUri } from '@/utils/credentials';
+
 const options = {};
 
 let client;
@@ -11,18 +12,18 @@ declare global {
     var _mongoClientPromise: Promise<MongoClient> | undefined;
 }
 
-if (!process.env.NEXT_PUBLIC_MONGODB_URI) {
+if (!mongoUri) {
     throw new Error('Please add your Mongo URI to .env.local');
 }
 
 if (process.env.NODE_ENV === 'development') {
     if (!global._mongoClientPromise) {
-        client = new MongoClient(uri, options);
+        client = new MongoClient(mongoUri, options);
         global._mongoClientPromise = client.connect();
     }
     clientPromise = global._mongoClientPromise;
 } else {
-    client = new MongoClient(uri, options);
+    client = new MongoClient(mongoUri, options);
     clientPromise = client.connect();
 }
 

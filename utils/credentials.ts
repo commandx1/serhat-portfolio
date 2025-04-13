@@ -10,4 +10,7 @@ const emailjsCredentials: IEmailjsCredentials = {
     publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY as string,
 };
 
-export { emailjsCredentials };
+const mongoUri = process.env.NEXT_PUBLIC_MONGODB_URI as string;
+const apiIpKey = process.env.NEXT_PUBLIC_APIIP_KEY as string;
+
+export { emailjsCredentials, mongoUri, apiIpKey };
