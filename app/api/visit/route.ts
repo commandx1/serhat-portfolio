@@ -1,31 +1,28 @@
-import fs from 'fs';
 import { NextRequest, NextResponse } from 'next/server';
-import path from 'path';
 
-const filePath = path.resolve('./data', 'visits.json');
+import clientPromise from '@/lib/mongodb';
 
 export async function GET(req: NextRequest) {
     const { searchParams } = new URL(req.url);
-    const hasVisited = searchParams.get('hasVisited') === 'true';
+    const shouldCount = searchParams.get('count') === 'true';
+    const emptyResponse = searchParams.get('emptyResponse') === 'true';
 
-    // Klasör yoksa oluştur
-    if (!fs.existsSync('./data')) {
-        fs.mkdirSync('./data');
-    }
+    const client = await clientPromise;
+    const db = client.db('portfolio');
 
-    // Dosya yoksa başlat
-    if (!fs.existsSync(filePath)) {
-        fs.writeFileSync(filePath, JSON.stringify({ count: 1 }, null, 2));
+    const collection = db.collection<{ _id: string; count: number }>('visits');
+
+    const doc = await collection.findOne({ _id: 'page-visit' });
+
+    if (!doc) {
+        await collection.insertOne({ _id: 'page-visit', count: 1 });
         return NextResponse.json({ count: 1 });
     }
 
-    const fileContent = fs.readFileSync(filePath, 'utf-8');
-    const data = JSON.parse(fileContent);
-
-    if (!hasVisited) {
-        data.count += 1;
-        fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+    if (shouldCount) {
+        await collection.updateOne({ _id: 'page-visit' }, { $inc: { count: 1 } });
+        doc.count += 1;
     }
 
-    return NextResponse.json({ count: data.count });
+    return NextResponse.json(emptyResponse ? {} : { count: doc.count });
 }

@@ -218,15 +218,13 @@ const LayoutBg = () => {
     }, []);
 
     useEffect(() => {
-        const hasVisited = sessionStorage.getItem('hasVisitedPortfolio');
+        const hasVisitedThisSession = sessionStorage.getItem('hasVisitedThisSession');
 
-        fetch(`/api/visit?hasVisited=${hasVisited ? 'true' : 'false'}`)
-            .then(res => res.json())
-            .then(() => {
-                if (!hasVisited) {
-                    sessionStorage.setItem('hasVisitedPortfolio', 'true');
-                }
-            });
+        fetch(`/api/visit?count=${!hasVisitedThisSession}&emptyResponse=true`).then(() => {
+            if (!hasVisitedThisSession) {
+                sessionStorage.setItem('hasVisitedThisSession', 'true');
+            }
+        });
     }, []);
 
     return (
