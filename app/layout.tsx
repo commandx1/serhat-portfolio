@@ -14,11 +14,11 @@ import styles from './page.module.scss';
 
 // app/page.tsx
 export const metadata: Metadata = {
-    title: 'Serhat Belen | Frontend Developer',
+    title: 'Serhat Belen | Full Stack Developer',
     description: 'Serhat Belen\'s personal portfolio. My projects and experiences as a web developer are here.',
     openGraph: {
-        title: 'Serhat Belen | Frontend Developer',
-        description: 'Projects developed with React, Next.js and modern web technologies.',
+        title: 'Serhat Belen | Full Stack Developer',
+        description: 'Projects developed with React, Next.js, TypeScript and modern web technologies.',
         url: 'https://serhatbelen.dev',
         siteName: 'Serhat Belen',
         locale: 'tr_TR',
