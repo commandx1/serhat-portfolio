@@ -27,12 +27,12 @@ const Links = ({ column }: LinksProps) => {
                 {t('AboutMe')}
             </Link>
 
-            <Link
+            {/* <Link
                 data-text={t('MyProjects')}
                 className={pathname === '/my-projects' ? 'activeLink' : ''}
                 href='my-projects'>
                 {t('MyProjects')}
-            </Link>
+            </Link> */}
 
             <Lang />
         </BouncingElements>

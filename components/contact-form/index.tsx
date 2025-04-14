@@ -3,7 +3,7 @@
 import MailIcon from '@mui/icons-material/MailOutline';
 import MapIcon from '@mui/icons-material/MapsHomeWorkOutlined';
 import PhoneIcon from '@mui/icons-material/PhoneOutlined';
-import { Alert, Button, Snackbar } from '@mui/material';
+import { Alert, Button } from '@mui/material';
 import { useTranslations } from 'next-intl';
 
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
@@ -19,16 +19,6 @@ const ContactForm = () => {
 
     return (
         <AnimatedDiv>
-            <Snackbar
-                open={sent}
-                style={{ zIndex: 99999 }}
-                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                autoHideDuration={6000}
-                onClose={() => setSent(false)}>
-                <Alert onClose={() => setSent(false)} severity='success' variant='filled' sx={{ width: '100%' }}>
-                    {t('SuccessMessage')}
-                </Alert>
-            </Snackbar>
             <section className={styles.contact}>
                 <div className={styles.content}>
                     <h2>{t('Title')}</h2>
@@ -90,6 +80,15 @@ const ContactForm = () => {
                                 {t('ButtonText')}
                             </Button>
                         </form>
+                        {sent && (
+                            <Alert
+                                sx={{ marginTop: 2 }}
+                                onClose={() => setSent(false)}
+                                severity='success'
+                                variant='filled'>
+                                {t('SuccessMessage')}
+                            </Alert>
+                        )}
                     </div>
                 </div>
             </section>
