@@ -4,3 +4,6 @@ Allow: /
 
 # Host
 Host: https://serhatbelen.dev
+
+# Sitemaps
+Sitemap: https://serhatbelen.dev/sitemap.xml
