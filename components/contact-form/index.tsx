@@ -59,13 +59,14 @@ const ContactForm = () => {
                         <form onSubmit={handleSubmit}>
                             <h2>{t('FormTitle')}</h2>
                             <div className={styles.inputBox}>
-                                <input type='text' name='name' value={formData.name} onChange={handleChange} required />
+                                <input type='text' name='name' id='name' value={formData.name} onChange={handleChange} required />
                                 <label htmlFor='name'>{t('NameLabel')}</label>
                             </div>
                             <div className={styles.inputBox}>
                                 <input
                                     type='email'
                                     name='email'
+                                    id='email'
                                     value={formData.email}
                                     onChange={handleChange}
                                     required
@@ -73,7 +74,7 @@ const ContactForm = () => {
                                 <label htmlFor='email'>{t('EmailLabel')}</label>
                             </div>{' '}
                             <div className={styles.inputBox}>
-                                <textarea name='message' value={formData.message} onChange={handleChange} required />
+                                <textarea name='message' id='message' value={formData.message} onChange={handleChange} required />
                                 <label htmlFor='message'>{t('TextareaLabel')}</label>
                             </div>
                             <Button variant='contained' color='success' loading={loading} type='submit'>
