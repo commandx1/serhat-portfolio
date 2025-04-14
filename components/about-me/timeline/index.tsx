@@ -28,12 +28,12 @@ export default function CustomizedTimeline() {
     const avenaExp = JSON.parse(t('Experiences.Avena'));
     const bynogameExp = JSON.parse(t('Experiences.ByNoGame'));
 
-    useCanvas();
+    useCanvas(isSmallScreen);
 
     return (
         <AnimatedDiv>
             <div className={styles.timeline}>
-                <canvas id='canv'></canvas>
+                {!isSmallScreen && <canvas id='canv'></canvas>}
 
                 <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
                     {t('TimelineTitle')}
