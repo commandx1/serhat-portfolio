@@ -1,18 +1,14 @@
 'use client';
 
-import { useMediaQuery, useTheme } from '@mui/material';
 import { useEffect, useRef } from 'react';
 
 import styles from './layout-bg.module.scss';
 
 const LayoutBg = () => {
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        if (!canvasRef.current) return;
+        if (!canvasRef.current || typeof window === undefined) return;
 
         const ctx = canvasRef.current.getContext('2d');
         if (!ctx) return;
@@ -219,7 +215,7 @@ const LayoutBg = () => {
         init();
 
         window.addEventListener('resize', setCanvasSize);
-    }, [isSmallScreen]);
+    }, []);
 
     useEffect(() => {
         const hasVisitedThisSession = sessionStorage.getItem('hasVisitedThisSession');
@@ -235,7 +231,7 @@ const LayoutBg = () => {
         <>
             <div className={styles.landscape} />
             <div className={styles.filter} />
-            {!isSmallScreen && <canvas ref={canvasRef} />}
+            <canvas ref={canvasRef} />
         </>
     );
 };

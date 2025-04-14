@@ -1,11 +1,9 @@
 import { useEffect } from 'react';
 
-const useCanvas = (isSmallScreen: boolean) => {
+const useCanvas = () => {
     useEffect(() => {
+        // Canvas initialization
         const c = document.getElementById('canv') as HTMLCanvasElement;
-
-        if (!c) return;
-
         const ctx = c.getContext('2d') as CanvasRenderingContext2D;
         let w = (c.width = window.innerWidth);
         let h = (c.height = window.innerHeight);
@@ -195,7 +193,7 @@ const useCanvas = (isSmallScreen: boolean) => {
             dieX = w / 2 / opts.len;
             dieY = h / 2 / opts.len;
         });
-    }, [isSmallScreen]);
+    }, []);
 };
 
 export default useCanvas;
