@@ -16,6 +16,9 @@ import styles from './page.module.scss';
 export const metadata: Metadata = {
     title: 'Serhat Belen | Full Stack Developer',
     description: 'Serhat Belen\'s personal portfolio. My projects and experiences as a web developer are here.',
+    icons: {
+        icon: './favicon.ico',
+    },
     openGraph: {
         title: 'Serhat Belen | Full Stack Developer',
         description: 'Projects developed with React, Next.js, TypeScript and modern web technologies.',
