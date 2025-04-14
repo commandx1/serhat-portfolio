@@ -120,7 +120,7 @@
                 color: #333;
             }
 
-            span {
+            label {
                 position: absolute;
                 left: 0;
                 padding: 5px 0;
@@ -131,10 +131,10 @@
                 transition: .5s;
             }
 
-            input:focus~span,
-            input:valid~span,
-            textarea:focus~span,
-            textarea:valid~span {
+            input:focus~label,
+            input:valid~label,
+            textarea:focus~label,
+            textarea:valid~label {
                 color: var(--red);
                 font-size: 12px;
                 transform: translateY(-20px);

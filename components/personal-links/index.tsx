@@ -6,7 +6,10 @@ const PersonalLinks = () => {
     return (
         <BouncingElements className={styles.list}>
             <div>
-                <a href='https://www.linkedin.com/in/serhat-belen-690a041b5/' target='_blank'>
+                <a
+                    href='https://www.linkedin.com/in/serhat-belen-690a041b5/'
+                    target='_blank'
+                    aria-label='Serhat Belen LinkedIn'>
                     <span>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -34,7 +37,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='https://www.instagram.com/serhatbelen7/' target='_blank'>
+                <a href='https://www.instagram.com/serhatbelen7/' target='_blank' aria-label='Serhat Belen Instagram'>
                     <span>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -70,7 +73,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='https://www.kariyer.net/ozgecmis/sbjk1icerftd' target='_blank'>
+                <a href='https://www.kariyer.net/ozgecmis/sbjk1icerftd' target='_blank' aria-label='Serhat Belen kariyer.net'>
                     <span>
                         <svg height='40' width='40' xmlns='http://www.w3.org/2000/svg'>
                             <text x='1' y='25' fontSize={11} fontWeight={900} fill='#8316b5'>
@@ -86,7 +89,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='mailto:serhatbelen7@gmail.com' target='_blank'>
+                <a href='mailto:serhatbelen7@gmail.com' target='_blank' aria-label='Serhat Belen Email'>
                     <span>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -118,7 +121,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='https://wa.me/905344200038' target='_blank'>
+                <a href='https://wa.me/905344200038' target='_blank' aria-label='Serhat Belen WhatsApp'>
                     <span>
                         <svg
                             xmlns='http://www.w3.org/2000/svg'
@@ -140,7 +143,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='/serhatbelen_cv.pdf' target='_blank' rel='noopener noreferrer'>
+                <a href='/serhatbelen_cv.pdf' target='_blank' rel='noopener noreferrer' aria-label='Serhat Belen Resume'>
                     <span>
                         <svg
                             fill='#1c1c1e'
