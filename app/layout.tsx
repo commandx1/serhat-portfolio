@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     description: 'Serhat Belen\'s personal portfolio. My projects and experiences as a web developer are here.',
     icons: {
         icon: './favicon.ico',
+        apple: './apple-touch-icon.png',
     },
     openGraph: {
         title: 'Serhat Belen | Full Stack Developer',
