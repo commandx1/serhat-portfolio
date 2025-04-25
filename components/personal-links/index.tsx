@@ -143,7 +143,7 @@ const PersonalLinks = () => {
                 </a>
             </div>
             <div>
-                <a href='/serhatbelen_cv.pdf' target='_blank' rel='noopener noreferrer' aria-label='Serhat Belen Resume'>
+                <a href='/serhatBelenCV.pdf' target='_blank' rel='noopener noreferrer' aria-label='Serhat Belen Resume'>
                     <span>
                         <svg
                             fill='#1c1c1e'

@@ -22,6 +22,10 @@
             "ByNoGame": "[\"Converted Figma designs into responsive, pixel-perfect user interfaces using HTML, CSS, jQuery, and JavaScript\",\"Developed and maintained a responsive web application for the trading of in-game items and accounts across popular games such as Knight, CS:GO, Metin2, PUBG, and Valorant\",\"Implemented dynamic features and enhanced user interactivity through jQuery, ensuring a smooth user experience across multiple browsers and devices\",\"Collaborated closely with backend developers working with Laravel to integrate frontend with APIs and ensure seamless data flow between client and server\",\"Focused on optimizing frontend performance and accessibility while maintaining clean and maintainable code\",\"Ensured the site was fully responsive, providing a seamless experience on both desktop and mobile devices\",\"Implemented SEO best practices, including optimizing meta tags, image alt attributes, and URL structures to improve search engine visibility and ranking\",\"Actively contributed to the development process by submitting pull requests for code changes, collaborating with the team to ensure high-quality code\",\"Managed tasks and tracked project progress using Jira, adhering to agile methodologies and ensuring timely delivery of features and bug fixes\"]"
         }
     },
+    "MyProject": {
+        "Title": "Page Under Construction",
+        "Summary": "This page is currently being updated.\nRelevant content will be available here shortly.\nThank you for your understanding."
+    },
     "ContactMe": {
         "Title": "Contact Me",
         "Desc": "I would be happy to assist you with anything you need. Feel free to reach out to me anytime!",

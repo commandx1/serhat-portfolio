@@ -18,7 +18,8 @@ const Links = ({ column }: LinksProps) => {
 
     return (
         <BouncingElements
-            style={{ display: 'flex', flexDirection: column ? 'column' : 'row', alignItems: 'center', gap: '1.3vw' }}>
+            style={{ display: 'flex', flexDirection: column ? 'column' : 'row', alignItems: 'center', gap: '1.3vw' }}
+        >
             <Link data-text={t('Home')} className={pathname === '/' ? 'activeLink' : ''} href='/'>
                 {t('Home')}
             </Link>
@@ -27,12 +28,13 @@ const Links = ({ column }: LinksProps) => {
                 {t('AboutMe')}
             </Link>
 
-            {/* <Link
+            <Link
                 data-text={t('MyProjects')}
                 className={pathname === '/my-projects' ? 'activeLink' : ''}
-                href='my-projects'>
+                href='my-projects'
+            >
                 {t('MyProjects')}
-            </Link> */}
+            </Link>
 
             <Lang />
         </BouncingElements>
