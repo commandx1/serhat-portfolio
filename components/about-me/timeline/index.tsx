@@ -17,7 +17,6 @@ import bynogame from '@/public/bynogame_logo.jpg';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 
 import styles from './timeline.module.scss';
-import useCanvas from './useCanvas';
 
 export default function CustomizedTimeline() {
     const theme = useTheme();
@@ -27,8 +26,6 @@ export default function CustomizedTimeline() {
 
     const avenaExp = JSON.parse(t('Experiences.Avena'));
     const bynogameExp = JSON.parse(t('Experiences.ByNoGame'));
-
-    useCanvas();
 
     return (
         <AnimatedDiv>
