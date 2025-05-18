@@ -73,7 +73,7 @@ const About = () => {
                                             {t('QuickInfo.Experience')}
                                         </Typography>
                                         <Typography variant='body2' className={styles.infoValue}>
-                                            5+ Years
+                                            4+ Years
                                         </Typography>
                                     </div>
                                 </BouncingElements>
