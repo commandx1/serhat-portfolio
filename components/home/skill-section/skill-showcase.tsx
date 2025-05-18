@@ -3,10 +3,12 @@
 import { Grid } from '@mui/material';
 
 import SkillCard from './skill-card';
-import { skillCategories } from './skill-data';
+import { useSkillCategories } from './skill-data';
 import styles from './skill-section.module.scss';
 
 const SkillsShowcase = () => {
+    const skillCategories = useSkillCategories();
+    
     return (
         <Grid container spacing={4} className={styles.skillsGrid}>
             {skillCategories.map((category, index) => (
