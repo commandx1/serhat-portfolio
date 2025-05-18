@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 
 import ContactForm from '@/components/contact-form';
 import HomeScroll from '@/components/home/home-scroll';
+import SkillSection from '@/components/home/skill-section';
 import Typed from '@/components/typed/typed';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 
@@ -33,6 +34,7 @@ export default function Home() {
                     </Grid>
                 </Grid>
             </Container>
+            <SkillSection />
             <AnimatedDiv threshold={0.2}>
                 <ContactForm />
             </AnimatedDiv>
