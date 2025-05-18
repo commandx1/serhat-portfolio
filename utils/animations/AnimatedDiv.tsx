@@ -18,16 +18,16 @@ const AnimatedDiv: FC<AnimatedSectionProps> = ({ children, threshold = 0.1 }) =>
 
     useEffect(() => {
         if (inView) {
-            controls.start({ opacity: 1, y: -60 });
+            controls.start({ opacity: 1, scale: 1 });
         }
     }, [inView, controls]);
 
     return (
         <motion.div
             ref={ref}
-            initial={{ opacity: 0, y: 0 }}
+            initial={{ opacity: 0, scale: 0.8 }}
             animate={controls}
-            transition={{ duration: 1, ease: 'easeOut' }}>
+            transition={{ duration: 0.5, ease: 'easeOut' }}>
             {children}
         </motion.div>
     );

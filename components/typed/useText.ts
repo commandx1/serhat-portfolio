@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import { generateString } from './helpers';
 
+// hook to manage animated text with error messages
 const useText = () => {
     const [strings, setStrings] = useState<string[]>(['']);
 
@@ -11,7 +12,7 @@ const useText = () => {
     const err2Ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        if (typeof window === undefined) return;
+        if (typeof window === 'undefined') return;
 
         setStrings(generateString());
 
@@ -20,25 +21,26 @@ const useText = () => {
         };
     }, []);
 
-    const timeout = (delay: number) => {
-        return new Promise(resolve => setTimeout(resolve, delay));
+    const delay = (ms: number): Promise<void> => {
+        return new Promise(resolve => setTimeout(resolve, ms));
     };
 
     useEffect(() => {
         const showErrorMessages = async () => {
+            // show error messages at specific times
             if (err1Ref.current) {
-                await timeout(3800);
+                await delay(3800);
                 err1Ref.current.style.display = 'block';
 
-                await timeout(3100);
+                await delay(3100);
                 err1Ref.current.style.display = 'none';
             }
 
             if (err2Ref.current) {
-                await timeout(2130);
+                await delay(2130);
                 err2Ref.current.style.display = 'block';
 
-                await timeout(2900);
+                await delay(2900);
                 err2Ref.current.style.display = 'none';
             }
         };

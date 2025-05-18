@@ -16,33 +16,22 @@ import {
 type TColor = 'red' | 'orange' | 'darkBlue' | 'blue' | 'green' | 'yellow' | undefined;
 type TIndent = string | undefined;
 
+const colorMap: Record<string, string> = {
+    red: 'var(--red)',
+    orange: 'var(--orange)',
+    yellow: 'var(--yellow)',
+    darkBlue: 'var(--darkBlue)',
+    green: 'var(--lightGreen)',
+    blue: 'var(--lightBlue)',
+};
+
 const writeDown = (content: string, color: TColor, indent: TIndent, id?: string) => {
-    const style = [];
+    const style: string[] = [];
 
-    if (color) {
-        switch (color) {
-        case 'red':
-            style.push('color: var(--red)');
-            break;
-        case 'orange':
-            style.push('color: var(--orange)');
-            break;
-        case 'yellow':
-            style.push('color: var(--yellow)');
-            break;
-        case 'darkBlue':
-            style.push('color: var(--darkBlue)');
-            break;
-        case 'green':
-            style.push('color: var(--lightGreen)');
-            break;
-        case 'blue':
-            style.push('color: var(--lightBlue)');
-            break;
-
-        default:
-            style.push(`color: ${color}`);
-        }
+    if (color && color in colorMap) {
+        style.push(`color: ${colorMap[color]}`);
+    } else if (color) {
+        style.push(`color: ${color}`);
     }
 
     if (content === ': ') {
@@ -59,7 +48,8 @@ const writeDown = (content: string, color: TColor, indent: TIndent, id?: string)
     return `<span style="${style.join(';')}">${content}</span>`;
 };
 
-const strings = [
+// the string that will be shown in the animation
+const buildInterface = () => [
     writeDown('interface ', 'red', undefined),
     writeDown('IDeveloper ', 'orange', undefined),
     writeDown('{', 'green', undefined),
@@ -89,40 +79,18 @@ const strings = [
     writeDown(' = ', 'red', undefined),
     writeDown('{', 'green', undefined),
     '<br/>',
+];
+
+// the first error state (number cannot be assigned to string)
+const strings = [
+    ...buildInterface(),
     writeDown('name:', undefined, '16px'),
     writeDown(' 1994,', 'green', undefined, 'err1Span'),
 ];
 
+// the second error state (string cannot be assigned to string[])
 const strings2 = [
-    writeDown('interface ', 'red', undefined),
-    writeDown('IDeveloper ', 'orange', undefined),
-    writeDown('{', 'green', undefined),
-    '<br/>',
-    writeDown('name:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('role:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('skills:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    writeDown('[]', 'yellow', undefined),
-    ';<br/>',
-    writeDown('favoriteTechStack:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('passion?:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('}', 'darkBlue', undefined),
-    '<br/><br/>',
-    writeDown('const ', 'red', undefined),
-    writeDown('developer', 'blue', undefined),
-    writeDown(': ', 'red', undefined),
-    writeDown('IDeveloper ', 'orange', undefined),
-    writeDown(' = ', 'red', undefined),
-    writeDown('{', 'green', undefined),
-    '<br/>',
+    ...buildInterface(),
     writeDown('name:', undefined, '16px'),
     writeDown(' "Serhat Belen",', 'green', undefined),
     '<br/>',
@@ -133,36 +101,9 @@ const strings2 = [
     writeDown(' "TypeScript"', 'green', undefined, 'err2Span'),
 ];
 
+// the final correct state
 const strings3 = [
-    writeDown('interface ', 'red', undefined),
-    writeDown('IDeveloper ', 'orange', undefined),
-    writeDown('{', 'green', undefined),
-    '<br/>',
-    writeDown('name:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('role:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('skills:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    writeDown('[]', 'yellow', undefined),
-    ';<br/>',
-    writeDown('favoriteTechStack:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('passion?:', undefined, '16px'),
-    writeDown(' string', 'green', undefined),
-    ';<br/>',
-    writeDown('}', 'darkBlue', undefined),
-    '<br/><br/>',
-    writeDown('const ', 'red', undefined),
-    writeDown('developer', 'blue', undefined),
-    writeDown(': ', 'red', undefined),
-    writeDown('IDeveloper ', 'orange', undefined),
-    writeDown(' = ', 'red', undefined),
-    writeDown('{', 'green', undefined),
-    '<br/>',
+    ...buildInterface(),
     writeDown('name:', undefined, '16px'),
     writeDown(' "Serhat Belen",', 'green', undefined),
     '<br/>',
@@ -216,5 +157,6 @@ const strings3 = [
     '<br/>',
     writeDown('}', 'green', undefined),
 ];
-
+// generate the string that will be shown in the animation
 export const generateString = () => [strings.join(''), strings2.join(''), strings3.join('')];
+

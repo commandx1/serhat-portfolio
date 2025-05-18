@@ -14,7 +14,7 @@ const HomeScroll = () => {
                 Scrollbar.destroy(el);
             }
 
-            Scrollbar.init(el, { damping: 0.14 });
+            Scrollbar.init(el, { damping: 0.1 });
         }
 
         return () => {
