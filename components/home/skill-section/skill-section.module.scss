@@ -76,6 +76,7 @@
 .iconContainer {
   margin-bottom: 1.2rem;
   transition: all 0.3s ease;
+
   svg {
     color: rgba(255, 255, 255, 0.7);
     transition: all 0.3s ease;
@@ -140,6 +141,7 @@
   border-radius: 8px !important;
   background: rgba(255, 255, 255, 0.08) !important;
   box-shadow: 0 2px 8px rgba(0, 255, 128, 0.08);
+
   :global(.MuiLinearProgress-bar) {
     background: linear-gradient(90deg, var(--lightGreen), #66a5fa) !important;
     border-radius: 8px !important;
@@ -152,12 +154,36 @@
     gap: 1.5rem;
     align-items: stretch;
   }
-  .skillCardLeft, .skillCardRight {
+
+  .skillCardLeft,
+  .skillCardRight {
     flex: 0;
     min-width: 0;
     width: 100%;
   }
+
   .skillsListWithProgress {
     margin-top: 1.2rem;
+  }
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.skillItem {
+  background: rgba(74, 222, 128, 0.1);
+  color: var(--lightGreen);
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(74, 222, 128, 0.2);
+    transform: translateY(-2px);
   }
 }
