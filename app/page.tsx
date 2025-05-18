@@ -3,7 +3,6 @@ import Grid from '@mui/material/Grid';
 import { useTranslations } from 'next-intl';
 
 import ContactForm from '@/components/contact-form';
-import HomeScroll from '@/components/home/home-scroll';
 import SkillSection from '@/components/home/skill-section';
 import Typed from '@/components/typed/typed';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
@@ -15,7 +14,6 @@ export default function Home() {
 
     return (
         <div className={styles.homeWrapper}>
-            <HomeScroll />
             <Container className={styles.home}>
                 <Grid className={styles.banner} container spacing={8}>
                     <Grid size={{ xs: 12, lg: 6 }}>

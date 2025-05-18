@@ -1,8 +1,7 @@
-import { Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import AboutScroll from '@/components/about-me/about-scroll';
 import CustomizedTimeline from '@/components/about-me/timeline';
 import ContactForm from '@/components/contact-form';
 import {
@@ -13,10 +12,11 @@ import {
     ReactSVG,
     ScssSVG,
     TypeScriptSVG,
-    VueSVG,
+    VueSVG
 } from '@/components/typed/SVGs';
 import me from '@/public/whp2.png';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
+import { BouncingElements } from '@/utils/animations/BouncingElements';
 
 import styles from './about.module.scss';
 
@@ -24,7 +24,6 @@ const About = () => {
     const t = useTranslations('AboutMe');
     return (
         <div className={styles.aboutWrapper}>
-            <AboutScroll />
             <div className={styles.about}>
                 <Container>
                     <AnimatedDiv>
@@ -33,7 +32,8 @@ const About = () => {
                                 <Typography
                                     variant='h3'
                                     className={[styles.summaryTitle, 'lineAnim'].join(' ')}
-                                    marginBottom={2}>
+                                    marginBottom={2}
+                                >
                                     {t('SummaryTitle')}
                                 </Typography>
                                 <div>{t('Summary')}</div>
@@ -43,6 +43,45 @@ const About = () => {
                                     <Image className={styles.me} src={me} alt='developer' />
                                 </div>
                             </Grid>
+                            <Box className={styles.quickInfo}>
+                                <BouncingElements className={styles.infoItems}>
+                                    <div className={styles.infoItem}>
+                                        <Typography variant='subtitle2' className={styles.infoLabel}>
+                                            Location
+                                        </Typography>
+                                        <Typography variant='body2' className={styles.infoValue}>
+                                            Mersin, Turkey
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.infoItem}>
+                                        <Typography variant='subtitle2' className={styles.infoLabel}>
+                                            Email
+                                        </Typography>
+                                        <Typography variant='body2' className={styles.infoValue}>
+                                            serhatbelen7@gmail.com
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.infoItem}>
+                                        <Typography variant='subtitle2' className={styles.infoLabel}>
+                                            Role
+                                        </Typography>
+                                        <Typography variant='body2' className={styles.infoValue}>
+                                            Full Stack Developer
+                                        </Typography>
+                                    </div>
+
+                                    <div className={styles.infoItem}>
+                                        <Typography variant='subtitle2' className={styles.infoLabel}>
+                                            Experience
+                                        </Typography>
+                                        <Typography variant='body2' className={styles.infoValue}>
+                                            5+ Years
+                                        </Typography>
+                                    </div>
+                                </BouncingElements>
+                            </Box>
                         </Grid>
                     </AnimatedDiv>
                 </Container>

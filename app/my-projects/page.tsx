@@ -1,4 +1,5 @@
 import { useTranslations } from 'next-intl';
+
 import styles from './style.module.scss';
 
 const MyProjects = () => {

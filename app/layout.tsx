@@ -8,6 +8,7 @@ import { ReactNode } from 'react';
 import Footer from '@/components/footer';
 import LayoutBg from '@/components/layout-bg/layout-bg';
 import Navbar from '@/components/navbar/navbar';
+import ScrollProgressBar from '@/components/ui/scroll-progress-bar';
 
 import './globals.scss';
 import styles from './page.module.scss';
@@ -60,6 +61,7 @@ export default async function RootLayout({
                 <AppRouterCacheProvider>
                     <NextIntlClientProvider messages={messages}>
                         <Navbar />
+                        <ScrollProgressBar />
                         <main className={styles.main}>{children}</main>
                         <Footer />
                     </NextIntlClientProvider>
