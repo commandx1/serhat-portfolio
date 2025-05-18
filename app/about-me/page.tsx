@@ -2,7 +2,7 @@ import { Box, Chip, Container, Divider, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-import CustomizedTimeline from '@/components/about-me/timeline';
+import Timeline from '@/components/about-me/timeline';
 import ContactForm from '@/components/contact-form';
 import SkillSection from '@/components/home/skill-section';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
@@ -83,7 +83,7 @@ const About = () => {
                 </Container>
             </div>
             <SkillSection />
-            <CustomizedTimeline />
+            <Timeline />
             <AnimatedDiv threshold={0.1}>
                 <section className={styles.education}>
                     <Container>
