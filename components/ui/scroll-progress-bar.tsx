@@ -44,7 +44,7 @@ const ScrollProgressBar = () => {
 
     return (
         <div className={styles.progressContainer}>
-            <div className={styles.progressBar} style={{ width: `${scrollProgress}%`, transition: '100ms' }} />
+            <div className={styles.progressBar} style={{ width: `${scrollProgress}%` }} />
         </div>
     );
 };
