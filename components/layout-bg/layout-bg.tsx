@@ -8,7 +8,7 @@ const LayoutBg = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
     useEffect(() => {
-        if (!canvasRef.current || typeof window === undefined) return;
+        if (!canvasRef.current || typeof window === 'undefined') return;
 
         const ctx = canvasRef.current.getContext('2d');
         if (!ctx) return;
