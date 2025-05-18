@@ -1,14 +1,8 @@
 'use client';
 
-import Timeline from '@mui/lab/Timeline';
-import TimelineConnector from '@mui/lab/TimelineConnector';
-import TimelineContent from '@mui/lab/TimelineContent';
-import TimelineDot from '@mui/lab/TimelineDot';
-import TimelineItem, { timelineItemClasses } from '@mui/lab/TimelineItem';
-import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import { Container } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -19,69 +13,75 @@ import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 import styles from './timeline.module.scss';
 
 export default function CustomizedTimeline() {
-    const theme = useTheme();
-    const isSmallScreen = useMediaQuery(theme.breakpoints.down('md'));
-
     const t = useTranslations('AboutMe');
 
     const avenaExp = JSON.parse(t('Experiences.Avena'));
     const bynogameExp = JSON.parse(t('Experiences.ByNoGame'));
 
+    const experiences = [
+        {
+            company: 'AVENA',
+            logo: avena,
+            experiences: avenaExp,
+            date: '2023 - Present'
+        },
+        {
+            company: 'BYNOGAME',
+            logo: bynogame,
+            experiences: bynogameExp,
+            date: '2022 - 2023'
+        }
+    ];
+
     return (
         <AnimatedDiv>
             <div className={styles.timeline}>
-                <canvas id='canv'></canvas>
+                <Container>
+                    <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
+                        {t('TimelineTitle')}
+                    </Typography>
 
-                <Typography variant='h3' className={[styles.title, 'lineAnim'].join(' ')} marginBottom={2}>
-                    {t('TimelineTitle')}
-                </Typography>
-                <Timeline
-                    sx={
-                        isSmallScreen
-                            ? {
-                                [`& .${timelineItemClasses.root}:before`]: {
-                                    flex: 0,
-                                    padding: 0,
-                                },
-                            }
-                            : {}
-                    }
-                    position={isSmallScreen ? 'right' : 'alternate'}>
-                    <TimelineItem>
-                        <TimelineSeparator>
-                            <TimelineConnector />
-                            <TimelineDot>
-                                <Image src={avena} alt='avena' />
-                            </TimelineDot>
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent sx={{ py: '12px', px: 2 }}>
-                            <Typography variant='h6' component='span'>
-                                AVENA
-                            </Typography>
-                            {avenaExp.map((sentence: string, key: string) => (
-                                <Typography key={key}>- {sentence}</Typography>
-                            ))}
-                        </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
-                        <TimelineSeparator>
-                            <TimelineConnector />
-                            <TimelineDot color='primary'>
-                                <Image src={bynogame} alt='bynogame' />
-                            </TimelineDot>
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent sx={{ py: '12px', px: 2 }}>
-                            <Typography variant='h6' component='span'>
-                                BYNOGAME
-                            </Typography>
-                            {bynogameExp.map((sentence: string, key: string) => (
-                                <Typography key={key}>{sentence} -</Typography>
-                            ))}
-                        </TimelineContent>
-                    </TimelineItem>
-                </Timeline>
+                    <div className={styles.timelineContainer}>
+                        {experiences.map((exp, index) => (
+                            <motion.div
+                                key={exp.company}
+                                className={styles.timelineItem}
+                                initial={{ opacity: 0, y: 50 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ duration: 0.5, delay: index * 0.2 }}
+                            >
+                                <div className={styles.timelineContent}>
+                                    <div className={styles.timelineHeader}>
+                                        <div className={styles.logoContainer}>
+                                            <Image src={exp.logo} alt={exp.company} />
+                                        </div>
+                                        <div className={styles.companyInfo}>
+                                            <Typography variant='h6'>{exp.company}</Typography>
+                                            <Typography variant='subtitle2' className={styles.date}>
+                                                {exp.date}
+                                            </Typography>
+                                        </div>
+                                    </div>
+                                    <div className={styles.experienceList}>
+                                        {exp.experiences.map((sentence: string, key: number) => (
+                                            <motion.div
+                                                key={key}
+                                                className={styles.experienceItem}
+                                                initial={{ opacity: 0, x: -20 }}
+                                                whileInView={{ opacity: 1, x: 0 }}
+                                                viewport={{ once: true }}
+                                                transition={{ duration: 0.3, delay: key * 0.05 }}
+                                            >
+                                                {sentence}
+                                            </motion.div>
+                                        ))}
+                                    </div>
+                                </div>
+                            </motion.div>
+                        ))}
+                    </div>
+                </Container>
             </div>
         </AnimatedDiv>
     );

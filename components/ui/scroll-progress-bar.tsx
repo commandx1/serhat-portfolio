@@ -9,15 +9,15 @@ const ScrollProgressBar = () => {
 
     const calculateScrollProgress = () => {
         const scrollElement = document.querySelector(`.${styles.main}`);
-        
+
         if (scrollElement) {
             const scrollTop = scrollElement.scrollTop;
             const scrollHeight = scrollElement.scrollHeight;
             const clientHeight = scrollElement.clientHeight;
-            
+
             // subtract scrollable height from page height
             const scrollableHeight = scrollHeight - clientHeight;
-            
+
             // calculate percentage (scrollTop / scrollableHeight) * 100
             if (scrollableHeight > 0) {
                 const newProgress = (scrollTop / scrollableHeight) * 100;
@@ -29,13 +29,13 @@ const ScrollProgressBar = () => {
     useEffect(() => {
         // connect to scroll event
         const scrollElement = document.querySelector(`.${styles.main}`);
-        
+
         if (scrollElement) {
             scrollElement.addEventListener('scroll', calculateScrollProgress);
-            
+
             // calculate scroll progress on first load
             calculateScrollProgress();
-    
+
             return () => {
                 scrollElement.removeEventListener('scroll', calculateScrollProgress);
             };
@@ -44,12 +44,9 @@ const ScrollProgressBar = () => {
 
     return (
         <div className={styles.progressContainer}>
-            <div 
-                className={styles.progressBar} 
-                style={{ width: `${scrollProgress}%` }}
-            />
+            <div className={styles.progressBar} style={{ width: `${scrollProgress}%`, transition: '100ms' }} />
         </div>
     );
 };
 
-export default ScrollProgressBar; 
+export default ScrollProgressBar;

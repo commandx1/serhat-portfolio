@@ -1,20 +1,10 @@
-import { Box, Container, Grid, Typography } from '@mui/material';
+import { Box, Chip, Container, Divider, Grid, Typography } from '@mui/material';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
 import CustomizedTimeline from '@/components/about-me/timeline';
 import ContactForm from '@/components/contact-form';
-import {
-    ExpressSVG,
-    MongoSVG,
-    NextSVG,
-    NodeSVG,
-    ReactSVG,
-    ScssSVG,
-    TypeScriptSVG,
-    VueSVG
-} from '@/components/typed/SVGs';
-import me from '@/public/whp2.png';
+import SkillSection from '@/components/home/skill-section';
 import AnimatedDiv from '@/utils/animations/AnimatedDiv';
 import { BouncingElements } from '@/utils/animations/BouncingElements';
 
@@ -40,14 +30,20 @@ const About = () => {
                             </Grid>
                             <Grid size={{ xs: 12, md: 5, lg: 4 }} marginLeft='auto'>
                                 <div className={styles.imgBox}>
-                                    <Image className={styles.me} src={me} alt='developer' />
+                                    <Image
+                                        className={styles.me}
+                                        src='/whp2.png'
+                                        width={300}
+                                        height={300}
+                                        alt='developer'
+                                    />
                                 </div>
                             </Grid>
                             <Box className={styles.quickInfo}>
                                 <BouncingElements className={styles.infoItems}>
                                     <div className={styles.infoItem}>
                                         <Typography variant='subtitle2' className={styles.infoLabel}>
-                                            Location
+                                            {t('QuickInfo.Location')}
                                         </Typography>
                                         <Typography variant='body2' className={styles.infoValue}>
                                             Mersin, Turkey
@@ -56,7 +52,7 @@ const About = () => {
 
                                     <div className={styles.infoItem}>
                                         <Typography variant='subtitle2' className={styles.infoLabel}>
-                                            Email
+                                            {t('QuickInfo.Email')}
                                         </Typography>
                                         <Typography variant='body2' className={styles.infoValue}>
                                             serhatbelen7@gmail.com
@@ -65,7 +61,7 @@ const About = () => {
 
                                     <div className={styles.infoItem}>
                                         <Typography variant='subtitle2' className={styles.infoLabel}>
-                                            Role
+                                            {t('QuickInfo.Role')}
                                         </Typography>
                                         <Typography variant='body2' className={styles.infoValue}>
                                             Full Stack Developer
@@ -74,7 +70,7 @@ const About = () => {
 
                                     <div className={styles.infoItem}>
                                         <Typography variant='subtitle2' className={styles.infoLabel}>
-                                            Experience
+                                            {t('QuickInfo.Experience')}
                                         </Typography>
                                         <Typography variant='body2' className={styles.infoValue}>
                                             5+ Years
@@ -86,57 +82,33 @@ const About = () => {
                     </AnimatedDiv>
                 </Container>
             </div>
-            <AnimatedDiv>
-                <section className={styles.skills}>
+            <SkillSection />
+            <CustomizedTimeline />
+            <AnimatedDiv threshold={0.1}>
+                <section className={styles.education}>
                     <Container>
-                        <div className={styles.box} data-text={t('SkillsTitle')}>
-                            <div className={styles.svg}>
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: ReactSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 2))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: TypeScriptSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 3))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: ScssSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 4))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: MongoSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 5))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: NodeSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 6))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: ExpressSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 7))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: VueSVG }}
-                                />
-                                <div
-                                    style={{ transform: 'rotate(calc(360deg / 8 * 8))' }}
-                                    className={styles.svgBox}
-                                    dangerouslySetInnerHTML={{ __html: NextSVG }}
-                                />
+                        <h3 className={styles.educationTitle}>
+                            {t('Education.Title')}
+                        </h3>
+                        <Divider className={styles.divider} />
+
+                        <div className={styles.educationItem}>
+                            <div className={styles.educationHeader}>
+                                <Typography variant='h5' className={styles.degreeTitle}>
+                                    {t('Education.Degree')}
+                                </Typography>
+                                <Chip label='2013-2019' className={styles.yearChip} />
                             </div>
+                            <Typography variant='subtitle1' className={styles.universityName}>
+                                {t('Education.University')}
+                            </Typography>
+                            <Typography variant='body2' className={styles.educationDesc}>
+                                {t('Education.Description')}
+                            </Typography>
                         </div>
                     </Container>
                 </section>
             </AnimatedDiv>
-            <CustomizedTimeline />
             <ContactForm />
         </div>
     );

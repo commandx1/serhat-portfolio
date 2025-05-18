@@ -32,7 +32,7 @@ export default function Home() {
                     </Grid>
                 </Grid>
             </Container>
-            <SkillSection />
+            <SkillSection showProgress={false} />
             <AnimatedDiv threshold={0.2}>
                 <ContactForm />
             </AnimatedDiv>

@@ -17,6 +17,10 @@ const ContactForm = () => {
 
     const { handleChange, handleSubmit, sent, loading, setSent, formData } = useForm();
 
+    const getClassName = (label: 'name' | 'email' | 'message'): string => {
+        return [styles.inputBox, formData[label].length && styles.hasValue].filter(Boolean).join(' ');
+    };
+
     return (
         <AnimatedDiv>
             <section className={styles.contact}>
@@ -58,11 +62,18 @@ const ContactForm = () => {
                     <div className={styles.contactForm}>
                         <form onSubmit={handleSubmit}>
                             <h2>{t('FormTitle')}</h2>
-                            <div className={styles.inputBox}>
-                                <input type='text' name='name' id='name' value={formData.name} onChange={handleChange} required />
+                            <div className={getClassName('name')}>
+                                <input
+                                    type='text'
+                                    name='name'
+                                    id='name'
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    required
+                                />
                                 <label htmlFor='name'>{t('NameLabel')}</label>
                             </div>
-                            <div className={styles.inputBox}>
+                            <div className={getClassName('email')}>
                                 <input
                                     type='email'
                                     name='email'
@@ -72,9 +83,15 @@ const ContactForm = () => {
                                     required
                                 />
                                 <label htmlFor='email'>{t('EmailLabel')}</label>
-                            </div>{' '}
-                            <div className={styles.inputBox}>
-                                <textarea name='message' id='message' value={formData.message} onChange={handleChange} required />
+                            </div>
+                            <div className={getClassName('message')}>
+                                <textarea
+                                    name='message'
+                                    id='message'
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    required
+                                />
                                 <label htmlFor='message'>{t('TextareaLabel')}</label>
                             </div>
                             <Button variant='contained' color='success' loading={loading} type='submit'>
@@ -86,7 +103,8 @@ const ContactForm = () => {
                                 sx={{ marginTop: 2 }}
                                 onClose={() => setSent(false)}
                                 severity='success'
-                                variant='filled'>
+                                variant='filled'
+                            >
                                 {t('SuccessMessage')}
                             </Alert>
                         )}
