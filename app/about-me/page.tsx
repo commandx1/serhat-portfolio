@@ -87,9 +87,7 @@ const About = () => {
             <AnimatedDiv threshold={0.1}>
                 <section className={styles.education}>
                     <Container>
-                        <h3 className={styles.educationTitle}>
-                            {t('Education.Title')}
-                        </h3>
+                        <Typography variant='h3' marginBottom={2} className={[styles.educationTitle, 'lineAnim'].join(' ')}>{t('Education.Title')}</Typography>
                         <Divider className={styles.divider} />
 
                         <div className={styles.educationItem}>
