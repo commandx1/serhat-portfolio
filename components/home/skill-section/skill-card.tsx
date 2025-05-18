@@ -33,10 +33,20 @@ const SkillCard = ({ category, index, showProgress = true }: SkillCardProps) => 
                         >
                             <div className={styles.skillCard}>
                                 <div className={styles.skillCardLeft}>
-                                    <div className={styles.iconContainer}>{category.icon}</div>
-                                    <Typography variant='h5' className={styles.skillTitle}>
-                                        {category.title}
-                                    </Typography>
+                                    <div
+                                        style={{
+                                            display: 'flex',
+                                            gap: '1rem',
+                                            alignItems: 'center',
+                                            marginBottom: '.5rem'
+                                        }}
+                                    >
+                                        <div className={styles.iconContainer}>{category.icon}</div>
+                                        <Typography variant='h5' className={styles.skillTitle}>
+                                            {category.title}
+                                        </Typography>
+                                    </div>
+
                                     <Typography variant='body2' className={styles.skillDescription}>
                                         {category.description}
                                     </Typography>
@@ -48,7 +58,9 @@ const SkillCard = ({ category, index, showProgress = true }: SkillCardProps) => 
                                                 <div key={i} className={styles.skillProgressItem}>
                                                     <div className={styles.skillProgressLabel}>
                                                         {skill.name}
-                                                        <span className={styles.skillProgressValue}>{skill.level}%</span>
+                                                        <span className={styles.skillProgressValue}>
+                                                            {skill.level}%
+                                                        </span>
                                                     </div>
                                                     <LinearProgress
                                                         variant='determinate'
