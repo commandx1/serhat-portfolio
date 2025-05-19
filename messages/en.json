@@ -77,5 +77,28 @@
         "TextareaLabel": "Message",
         "ButtonText": "Send",
         "SuccessMessage": "Your message has been sent successfully!"
+    },
+    "MyProjects": {
+        "Title": "My Projects",
+        "Subtitle": "Here's a collection of my recent work.",
+        "All": "All Projects",
+        "Featured": "Featured",
+        "Frontend": "Frontend",
+        "Fullstack": "Full Stack",
+        "Category": {
+            "frontend": "Frontend",
+            "fullstack": "Full Stack",
+            "other": "Other"
+        },
+        "FeaturedBadge": "Featured",
+        "ViewDetails": "View Details",
+        "MoreOnGithub": "More on GitHub",
+        "Dialog": {
+            "Technologies": "Technologies Used",
+            "Challenges": "Challenges",
+            "Solutions": "Solutions",
+            "ViewCode": "View Code",
+            "LiveDemo": "Live Demo"
+        }
     }
 }

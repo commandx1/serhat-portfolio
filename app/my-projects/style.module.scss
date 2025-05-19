@@ -1,20 +1,527 @@
-.container {
+.projectsWrapper {
+  width: 100%;
+  height: 100%;
+  overflow: hidden auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.projectsContainer {
+  padding: 4rem 0;
+  min-height: 100%;
+}
+
+.heroSection {
+  text-align: center;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, rgba(74, 222, 128, 0) 70%);
+    top: -20px;
+    left: 20%;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.15) 0%, rgba(74, 222, 128, 0) 70%);
+    bottom: -50px;
+    right: 15%;
+    border-radius: 50%;
+    z-index: -1;
+  }
+}
+
+.title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(90deg, var(--lightGreen) 0%, #66a5fa 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: 768px) {
+    font-size: 2.5rem;
+  }
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.filterContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+    bottom: -10px;
+  }
+}
+
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.filterButton {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: var(--lightGreen);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover {
+    color: white;
+
+    &::before {
+      transform: translateX(-50%) scaleX(0.3);
+    }
+  }
+
+  &.active {
+    color: var(--lightGreen);
+    font-weight: 500;
+
+    &::before {
+      transform: translateX(-50%) scaleX(1);
+    }
+  }
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.projectCard {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  height: 100%;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  cursor: pointer;
+  position: relative;
+
+  &:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(74, 222, 128, 0.3);
+
+    .projectImage {
+      transform: scale(1.05);
+    }
+
+    .viewDetailsButton {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.projectImageContainer {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+.projectCategory {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+}
+
+.featuredBadge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: rgba(74, 222, 128, 0.8);
+  color: rgba(0, 0, 0, 0.8);
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  backdrop-filter: blur(4px);
+}
+
+.projectContent {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  margin-bottom: 0.8rem;
+  color: white;
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.projectDescription {
+  margin-bottom: 1.5rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  flex-grow: 1;
+  font-size: 0.95rem;
+}
+
+.projectTech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.techTag {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.viewDetailsButton {
+  background: transparent;
+  color: var(--lightGreen);
+  border: none;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0.7;
+  transform: translateY(5px);
+  align-self: flex-start;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.moreProjects {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.moreButton {
+  padding: 0.75rem 2rem !important;
+  border-radius: 30px !important;
+  font-weight: 500 !important;
+  letter-spacing: 1px !important;
+  transition: all 0.3s ease !important;
+  border: 2px solid var(--lightGreen) !important;
+  background: var(--lightGreen) !important;
+  color: var(--darkGreen) !important;
+
+  &:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 15px rgba(74, 222, 128, 0.3) !important;
+  }
+}
+
+// Dialog styles
+.dialogPaper {
+  background-color: #1a1a1a !important;
+  color: white !important;
+  border-radius: 16px !important;
+  overflow: hidden !important;
+  max-width: 1000px !important;
+
+  @media (max-width: 768px) {
+    margin: 1rem !important;
+  }
+}
+
+.dialogTitle {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 1.5rem 2rem !important;
+  background: rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
+  color: var(--lightGreen) !important;
+}
+
+.closeButton {
+  color: white !important;
+  transition: all 0.3s ease !important;
+
+  &:hover {
+    color: var(--lightGreen) !important;
+    transform: rotate(90deg) !important;
+  }
+}
+
+.dialogContent {
+  padding: 2rem !important;
+}
+
+.projectSlider {
+  margin-bottom: 2rem;
+
+  @media (max-width: 768px) {
+    margin-bottom: 4rem;
+  }
+}
+
+.sliderContainer {
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.sliderImageContainer {
+  width: 100%;
+  height: 400px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    height: 250px;
+  }
+}
+
+.sliderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.sliderControls {
+  position: absolute;
+  bottom: -4rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sliderButton {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  height: 100%;
-  width: 500px;
-  max-width: 100%;
-  margin: auto;
-  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
 
-  h1 {
-    font-size: 2em;
+  &:hover {
+    background: var(--lightGreen);
+    color: var(--darkGreen);
   }
-  
-  p{
-    white-space: pre;
+}
+
+.sliderDots {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.sliderDot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.7);
+  }
+
+  &.active {
+    background: var(--lightGreen);
+    transform: scale(1.2);
+  }
+}
+
+.projectDetails {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectSection {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  color: var(--lightGreen);
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: relative;
+  padding-left: 1rem;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 18px;
+    background: var(--lightGreen);
+    border-radius: 2px;
+  }
+}
+
+.techChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.techChip {
+  background: rgba(74, 222, 128, 0.1) !important;
+  color: var(--lightGreen) !important;
+  border: 1px solid rgba(74, 222, 128, 0.3) !important;
+  font-size: 0.8rem !important;
+}
+
+.projectList {
+  list-style-type: none;
+  padding-left: 1rem;
+  margin: 0;
+
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    line-height: 1.6;
+
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--lightGreen);
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.projectLinks {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.projectLink {
+  flex: 1;
+  padding: 0.75rem !important;
+  border-radius: 8px !important;
+  font-weight: 500 !important;
+  transition: all 0.3s ease !important;
+
+  &:first-child {
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    color: white !important;
+
+    &:hover {
+      border-color: white !important;
+      background: rgba(255, 255, 255, 0.1) !important;
+    }
+  }
+
+  &:last-child {
+    background: var(--lightGreen) !important;
+    color: var(--darkGreen) !important;
+
+    &:hover {
+      background: #3acd6d !important;
+      box-shadow: 0 6px 15px rgba(74, 222, 128, 0.3) !important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .projectLinks {
+    flex-direction: column;
   }
 }

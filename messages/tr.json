@@ -77,5 +77,28 @@
         "TextareaLabel": "Mesaj",
         "ButtonText": "Gönder",
         "SuccessMessage": "Mesajınız başarıyla gönderildi!"
+    },
+    "MyProjects": {
+        "Title": "Projelerim",
+        "Subtitle": "Son çalışmalarımın bir koleksiyonu.",
+        "All": "Tüm Projeler",
+        "Featured": "Öne Çıkanlar",
+        "Frontend": "Frontend",
+        "Fullstack": "Full Stack",
+        "Category": {
+            "frontend": "Frontend",
+            "fullstack": "Full Stack",
+            "other": "Diğer"
+        },
+        "FeaturedBadge": "Öne Çıkan",
+        "ViewDetails": "Detayları Gör",
+        "MoreOnGithub": "GitHub'da Daha Fazlası",
+        "Dialog": {
+            "Technologies": "Kullanılan Teknolojiler",
+            "Challenges": "Zorluklar",
+            "Solutions": "Çözümler",
+            "ViewCode": "Kodu Görüntüle",
+            "LiveDemo": "Canlı Demo"
+        }
     }
 }
