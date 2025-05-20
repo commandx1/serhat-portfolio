@@ -157,7 +157,7 @@ const MyProjects = () => {
                                 <div className={styles.projectImageContainer}>
                                     <Image
                                         src={project.image}
-                                        alt={project.title}
+                                        alt={t(`Projects.${project.id}.title`)}
                                         width={500}
                                         height={300}
                                         className={styles.projectImage}
@@ -172,8 +172,10 @@ const MyProjects = () => {
                                     )}
                                 </div>
                                 <div className={styles.projectContent}>
-                                    <h3 className={styles.projectTitle}>{project.title}</h3>
-                                    <p className={styles.projectDescription}>{project.description}</p>
+                                    <h3 className={styles.projectTitle}>{t(`Projects.${project.id}.title`)}</h3>
+                                    <p className={styles.projectDescription}>
+                                        {t(`Projects.${project.id}.Description`)}
+                                    </p>
                                     <div className={styles.projectTech}>
                                         {project.technologies.slice(0, 3).map(tech => (
                                             <span key={tech} className={styles.techTag}>
@@ -210,7 +212,7 @@ const MyProjects = () => {
 
             <Dialog open={open} onClose={handleClose} maxWidth='lg' fullWidth classes={{ paper: styles.dialogPaper }}>
                 <DialogTitle className={styles.dialogTitle}>
-                    {selectedProject?.title}
+                    {t(`Projects.${selectedProject?.id}.title`)}
                     <IconButton onClick={handleClose} className={styles.closeButton}>
                         <X />
                     </IconButton>
@@ -232,7 +234,7 @@ const MyProjects = () => {
                                             >
                                                 <Image
                                                     src={selectedProject.screenshots[activeIndex]}
-                                                    alt={`${selectedProject.title} screenshot ${activeIndex + 1}`}
+                                                    alt={`${t(`Projects.${selectedProject.id}.title`)} screenshot ${activeIndex + 1}`}
                                                     width={800}
                                                     height={500}
                                                     className={styles.sliderImage}
@@ -263,7 +265,7 @@ const MyProjects = () => {
                                 <div className={styles.projectDetails}>
                                     <div className={styles.projectDescription}>
                                         <Typography variant='body1' paragraph>
-                                            {selectedProject.longDescription}
+                                            {t(`Projects.${selectedProject.id}.longDescription`)}
                                         </Typography>
                                     </div>
 
@@ -277,20 +279,24 @@ const MyProjects = () => {
                                     </div>
 
                                     <div className={styles.projectSection}>
-                                        <h6 className={styles.sectionTitle}>{t('Dialog.Challenges')}</h6>
+                                        <h6 className={styles.sectionTitle}>{t('Dialog.Objectives')}</h6>
                                         <ul className={styles.projectList}>
-                                            {selectedProject.challenges.map((challenge, i) => (
-                                                <li key={i}>{challenge}</li>
-                                            ))}
+                                            {JSON.parse(t(`Projects.${selectedProject.id}.challenges`)).map(
+                                                (challenge: string, i: number) => (
+                                                    <li key={i}>{challenge}</li>
+                                                )
+                                            )}
                                         </ul>
                                     </div>
 
                                     <div className={styles.projectSection}>
                                         <h6 className={styles.sectionTitle}>{t('Dialog.Solutions')}</h6>
                                         <ul className={styles.projectList}>
-                                            {selectedProject.solutions.map((solution, i) => (
-                                                <li key={i}>{solution}</li>
-                                            ))}
+                                            {JSON.parse(t(`Projects.${selectedProject.id}.solutions`)).map(
+                                                (solution: string, i: number) => (
+                                                    <li key={i}>{solution}</li>
+                                                )
+                                            )}
                                         </ul>
                                     </div>
 
