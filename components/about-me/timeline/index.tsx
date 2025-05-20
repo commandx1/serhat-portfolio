@@ -23,13 +23,13 @@ export default function CustomizedTimeline() {
             company: 'AVENA',
             logo: avena,
             experiences: avenaExp,
-            date: '2023 - Present'
+            date: '2021 - 2025'
         },
         {
             company: 'BYNOGAME',
             logo: bynogame,
             experiences: bynogameExp,
-            date: '2022 - 2023'
+            date: '2020 - 2021'
         }
     ];
 
