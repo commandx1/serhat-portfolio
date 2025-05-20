@@ -95,10 +95,40 @@
         "MoreOnGithub": "More on GitHub",
         "Dialog": {
             "Technologies": "Technologies Used",
-            "Challenges": "Challenges",
+            "Objectives": "Objectives",
             "Solutions": "Solutions",
             "ViewCode": "View Code",
             "LiveDemo": "Live Demo"
+        },
+        "Projects": {
+            "project1": {
+                "title": "Pencil Club",
+                "Description": "Full-featured blog platform built with React, NestJS, and MongoDB.",
+                "longDescription": "Pencil Club is a comprehensive blog platform developed with ReactJS frontend and NestJS backend. It provides secure user authentication based on JWT, email confirmation, and Google OAuth integration. Users can create and edit profiles, visit other users' profile pages, comment on blog posts, reply, and manage likes. Filtering by categories and advanced search make content easily accessible. All media files are securely stored on AWS S3.",
+                "challenges": "[\"Develop a secure and scalable user authentication and authorization system based on JWT.\",\"Ensure reliable user registration with email verification and Google OAuth integration.\",\"Synchronize profile management and viewing other users' profiles.\",\"Make comment, reply, and like systems for blog posts realistic and user-friendly.\",\"Implement post filtering by category and strong search engine optimization.\",\"Create secure, fast, and scalable file upload processes on AWS S3.\"]",
+                "solutions": "[\"Implemented secure authentication and authorization mechanisms with JWT, and applied a refresh token system.\",\"Automated email verification with NodeMailer and added social login support with Google OAuth.\",\"Optimized profile operations and access with React state management and API optimization.\",\"Developed optimized data models and API endpoints for comments, replies, and likes in the backend.\",\"Used MongoDB text indexes and appropriate query techniques for category filtering and search engine.\",\"Files are uploaded to AWS S3 with Multer; S3 SDK is used for high performance and security.\"]"
+            },
+            "project2": {
+                "title": "Plant Healthy",
+                "Description": "A React + NestJS app that tracks plant health and provides weather and care suggestions.",
+                "longDescription": "Plant Healthy is a comprehensive application focused on plant health, developed with ReactJS frontend and NestJS backend. Users can securely log in with Google OAuth and email verification. Plant lists and details can be viewed, and regional weather data is fetched from the Open-Meteo API to provide watering and care suggestions. Users can also select locations on a map to more accurately track the weather for their plants. With a user-friendly interface, plant health is always under control.",
+                "challenges": "[\"Provide secure user authentication with Google OAuth and email verification.\",\"Accurately fetch real-time and regional weather data using the Open-Meteo API.\",\"Integrate location selection via map and synchronize data with the backend.\",\"Synchronize and optimize complex state management with Redux.\",\"Enable fast queries on large datasets with MongoDB optimizations.\",\"Deliver an aesthetic and usable interface on all devices with responsive design.\"]",
+                "solutions": "[\"Implemented JWT-based security and automated email verification with NodeMailer, integrated Google OAuth.\",\"Provided accurate and up-to-date weather data using the Open-Meteo API.\",\"Integrated interactive maps with Leaflet and React-Leaflet.\",\"Synchronized user-selected location data with the backend for personalized care suggestions.\",\"Achieved effective state management and performance improvements with React and Redux.\",\"Optimized indexing and queries in MongoDB.\",\"Designed a responsive and modern UI using CSS Grid and Flexbox.\"]"
+            },
+            "project3": {
+                "title": "Invent AI MovieApp",
+                "Description": "A discovery app built with React, Redux, and TypeScript, filtering movies and series by year and genre using OMDb API.",
+                "longDescription": "Invent AI MovieApp is a movie/series discovery platform integrated with the OMDb API, built with React and Redux for performance and TypeScript for robustness. Features include filtering by year and genre, detail pages, and series episodes. Framer Motion is used for page transitions and component animations, providing a top-notch user experience. It's a modern app that appeals to both aesthetics and performance.",
+                "challenges": "[\"Fetch up-to-date and accurate movie/series data from the OMDb API.\",\"Create an effective filtering system by year and genre.\",\"Display series episodes and details for each episode.\",\"Manage global state with Redux.\",\"Integrate page transitions and component animations with Framer Motion.\",\"Design a responsive and user-friendly interface.\"]",
+                "solutions": "[\"Managed data fetching from OMDb API using Axios.\",\"Optimized filtering operations with Redux.\",\"Implemented dynamic page transitions and episode details with React Router.\",\"Provided smooth animations and transitions using Framer Motion.\",\"Managed styles with CSS Modules and developed a responsive design.\"]"
+            },
+            "project4": {
+                "title": "Love App",
+                "Description": "A full-featured love app built with React, Redux, Express, and MongoDB.",
+                "longDescription": "to be updated",
+                "challenges": "[\"to be updated\"]",
+                "solutions": "[\"to be updated\"]"
+            }
         }
     }
 }
