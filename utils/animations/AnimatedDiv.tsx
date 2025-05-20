@@ -9,11 +9,11 @@ interface AnimatedSectionProps {
     threshold?: number;
 }
 
-const AnimatedDiv: FC<AnimatedSectionProps> = ({ children, threshold = 0.1 }) => {
+const AnimatedDiv: FC<AnimatedSectionProps> = ({ children }) => {
     const controls = useAnimation();
     const [ref, inView] = useInView({
         triggerOnce: true, // sadece bir kere tetiklensin
-        threshold, // görünürlüğün %10'u yeterli
+        threshold: 0.1, // görünürlüğün %10'u yeterli
     });
 
     useEffect(() => {
