@@ -83,7 +83,7 @@ const MyProjects = () => {
     }, []);
 
     return (
-        <div className={styles.projectsWrapper}>
+        <>
             <div className={styles.projectsContainer}>
                 <Container maxWidth='lg'>
                     <AnimatedDiv>
@@ -330,7 +330,7 @@ const MyProjects = () => {
                     )}
                 </DialogContent>
             </Dialog>
-        </div>
+        </>
     );
 };
 
