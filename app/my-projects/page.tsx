@@ -212,13 +212,13 @@ const MyProjects = () => {
 
             <Dialog open={open} onClose={handleClose} maxWidth='lg' fullWidth classes={{ paper: styles.dialogPaper }}>
                 <DialogTitle className={styles.dialogTitle}>
-                    {t(`Projects.${selectedProject?.id}.title`)}
+                    {!!selectedProject && t(`Projects.${selectedProject.id}.title`)}
                     <IconButton onClick={handleClose} className={styles.closeButton}>
                         <X />
                     </IconButton>
                 </DialogTitle>
                 <DialogContent className={styles.dialogContent}>
-                    {selectedProject && (
+                    {!!selectedProject && (
                         <Grid container spacing={4}>
                             <Grid size={{ xs: 12, md: 7 }}>
                                 <div className={styles.projectSlider}>

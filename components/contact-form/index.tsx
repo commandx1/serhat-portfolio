@@ -22,8 +22,8 @@ const ContactForm = () => {
     };
 
     return (
-        <AnimatedDiv>
-            <section className={styles.contact}>
+        <section className={styles.contact}>
+            <AnimatedDiv>
                 <div className={styles.content}>
                     <h2>{t('Title')}</h2>
                     <p>{t('Desc')}</p>
@@ -110,8 +110,8 @@ const ContactForm = () => {
                         )}
                     </div>
                 </div>
-            </section>
-        </AnimatedDiv>
+            </AnimatedDiv>
+        </section>
     );
 };
 
