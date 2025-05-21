@@ -128,6 +128,13 @@
                 "longDescription": "to be updated",
                 "challenges": "[\"to be updated\"]",
                 "solutions": "[\"to be updated\"]"
+            },
+            "project5": {
+                "title": "Sinem Odalı Belen – Portfolio",
+                "Description": "Next.js and Tailwind CSS built, SEO friendly and mobile friendly corporate website.",
+                "longDescription": "The corporate website prepared for Sinem Odalı Belen, developed with modern technologies. The site built with Next.js App Router and TypeScript; it stands out with personal introduction, service areas, career history, and contact sections. It is equipped with SEO-friendly components such as Google Search Console integration, dynamic metadata management, sitemap, and robots.txt. Additionally, it supports Open Graph and JSON-LD, optimizing social media visibility.",
+                "challenges": "[\"Develop a clean and effective user interface for a corporate structure.\",\"Implement Google Search Console validation and indexing.\",\"Create a mobile-friendly, fast-loading, and accessible site.\",\"Support Open Graph and JSON-LD for SEO and social media visibility.\",\"Manage domain and fast CI/CD integration on Vercel.\"]",
+                "solutions": "[\"Developed a responsive and modern UI with Next.js App Router and Tailwind CSS.\",\"Implemented Google Search Console validation and custom metadata.\",\"Automated sitemap and robots.txt generation with next-sitemap.\",\"Enhanced SEO and social media visibility with Open Graph and JSON-LD.\",\"Managed domain and fast CI/CD integration on Vercel.\"]"
             }
         }
     }

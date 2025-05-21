@@ -109,5 +109,30 @@ export const projects: Project[] = [
             '/loveapp/love6.png',
             '/loveapp/love7.png'
         ]
+    },
+    {
+        id: 'project5',
+        image: '/sinem-portfolio/sinem1.png',
+        technologies: [
+            'Next.js',
+            'React',
+            'TypeScript',
+            'Tailwind CSS',
+            'Google Search Console',
+            'next-sitemap',
+            'Structured Data (JSON-LD)',
+            'Open Graph'
+        ],
+        github: 'https://github.com/commandx1/sinem-portfolio',
+        live: 'https://sinemodalibelen.com',
+        featured: false,
+        category: 'frontend',
+        screenshots: [
+            '/sinem-portfolio/sinem1.png',
+            '/sinem-portfolio/sinem2.png',
+            '/sinem-portfolio/sinem3.png',
+            '/sinem-portfolio/sinem4.png',
+            '/sinem-portfolio/sinem5.png'
+        ]
     }
 ];

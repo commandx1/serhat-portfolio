@@ -128,6 +128,13 @@
                 "longDescription": "güncellenecek",
                 "challenges": "[\"güncellenecek\"]",
                 "solutions": "[\"güncellenecek\"]"
+            },
+            "project5": {
+                "title": "Sinem Odalı Belen – Portfolio",
+                "Description": "Next.js ve Tailwind CSS kullanılarak geliştirilen, SEO uyumlu ve mobil uyumlu kurumsal tanıtım sitesi.",
+                "longDescription": "Sinem Odalı Belen için hazırlanan bu kurumsal web sitesi, modern teknolojilerle geliştirildi. Next.js App Router yapısı ve TypeScript desteğiyle oluşturulan site; kişisel tanıtım, hizmet alanları, kariyer geçmişi ve iletişim bölümleriyle öne çıkıyor. Google Search Console entegrasyonu, dinamik metadata yönetimi, sitemap ve robots.txt gibi SEO dostu bileşenlerle donatıldı. Ayrıca Open Graph ve JSON-LD destekleriyle sosyal medya görünürlüğü optimize edildi.",
+                "challenges": "[\"Kurumsal bir yapıya uygun sade ve etkili bir kullanıcı arayüzü tasarlamak.\",\"SEO uyumlu yapı kurarak Google doğrulama ve indekslemeleri tamamlamak.\",\"Mobil uyumlu, hızlı yüklenen ve erişilebilir bir site oluşturmak.\",\"Open Graph ve Structured Data ile sosyal medya uyumluluğu sağlamak.\",\"Google Search Console entegrasyonu ve sitemap yönetimini uygulamak.\"]",
+                "solutions": "[\"Next.js App Router ve Tailwind CSS ile responsive ve modern bir arayüz geliştirildi.\",\"Google doğrulama için özel metadata ve DNS yapılandırmaları yapıldı.\",\"next-sitemap paketiyle otomatik olarak sitemap ve robots.txt üretildi.\",\"Open Graph ve JSON-LD yapılandırmalarıyla SEO ve sosyal medya görünürlüğü artırıldı.\",\"Vercel üzerinde domain yönetimi ve hızlı CI/CD entegrasyonu sağlandı.\"]"
             }
         }
     }
