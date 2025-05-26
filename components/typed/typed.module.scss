@@ -5,7 +5,7 @@
     overflow: hidden;
     color: #fff;
     flex: 1;
-    min-height: 565px;
+    min-height: 618px;
     width: 100%;
     font-size: 14px;
 
@@ -17,10 +17,27 @@
         left: 0;
         top: 0;
         backdrop-filter: blur(64px);
-        background: #0F2027; /* fallback for old browsers */
-        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027); /* Chrome 10-25, Safari 5.1-6 */
-        background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: #0F2027;
+        background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+        background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
         opacity: .6;
+        background-size: 200% 100%;
+        animation: gradientFlow 6s ease infinite;
+        transition: width 0.3s ease-out linear;
+
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
     }
 
     .content {

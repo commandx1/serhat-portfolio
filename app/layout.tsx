@@ -55,8 +55,8 @@ export default async function RootLayout({
     const [messages, locale] = await Promise.all([getMessages(), getLocale()]);
 
     return (
-        <html lang={locale} suppressHydrationWarning>
-            <body className={poppins.className}>
+        <html lang={locale}>
+            <body className={poppins.className} suppressHydrationWarning>
                 <LayoutBg />
                 <AppRouterCacheProvider>
                     <NextIntlClientProvider messages={messages}>
