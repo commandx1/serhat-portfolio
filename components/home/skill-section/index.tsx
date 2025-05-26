@@ -9,11 +9,8 @@ import SkillsShowcase from './skill-showcase';
 const SkillSection = ({ showProgress = true }: { showProgress?: boolean }) => {
     const t = useTranslations('AboutMe');
 
-    let text = t('SkillsDescription');
+    const text = showProgress ? t('SkillsDescription') : t('SkillsDescription').split('.')[0];
 
-    if (!showProgress) {
-        text = text.split('.')[0];
-    }
     return (
         <section className={styles.skillsSection}>
             <Container>
