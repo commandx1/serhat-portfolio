@@ -32,7 +32,9 @@ export const useSkillCategories = (): Skill[] => {
                 'SCSS/CSS',
                 'Tailwind CSS',
                 'Material UI',
-                'Ant Design'
+                'Ant Design',
+                'WebSocket Client',
+                'GraphQL'
             ],
             levels: [
                 { name: 'React', level: 97 },
@@ -51,12 +53,12 @@ export const useSkillCategories = (): Skill[] => {
             title: t('BackendDevelopment.Title'),
             description: t('BackendDevelopment.Description'),
             icon: <DeveloperMode />,
-            skills: ['Node.js', 'Express', 'MongoDB', 'RESTful APIs', 'NestJS', 'Authentication'],
+            skills: ['Node.js', 'Express', 'MongoDB', 'RESTful APIs', 'NestJS', 'Authentication', 'WebSocket', 'GraphQL'],
             levels: [
                 { name: 'Node.js', level: 90 },
                 { name: 'Express', level: 90 },
                 { name: 'RESTful APIs', level: 90 },
-                { name: 'NestJS', level: 80 },
+                { name: 'NestJS', level: 85 },
             ]
         },
         {
@@ -75,9 +77,9 @@ export const useSkillCategories = (): Skill[] => {
             ],
             levels: [
                 { name: 'MongoDB', level: 95 },
-                { name: 'PostgreSQL', level: 75 },
+                { name: 'PostgreSQL', level: 85 },
                 { name: 'Indexing', level: 90 },
-                { name: 'Redis', level: 75 },
+                { name: 'Redis', level: 85 },
                 { name: 'Data Modeling', level: 85 },
                 { name: 'Aggregation', level: 95 },
                 { name: 'Query Optimization', level: 90 }
