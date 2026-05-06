@@ -266,7 +266,7 @@ module.exports = {
     content: `function getProfile() {
   return {
     name: "Serhat Belen",
-    role: "Senior Full Stack Developer",
+    role: "Full Stack Developer",
     location: "Turkey",
     focus: ["Node.js", "TypeScript", "Distributed Systems"],
   };
@@ -378,7 +378,7 @@ module.exports = {
     content: `const workExperience = [
   {
     company: "Onlay AI",
-    role: "Senior Full Stack Developer",
+    role: "Full Stack Developer",
     period: "Jun 2025 – Present",
     techStack: [
       "Next.js",

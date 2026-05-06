@@ -5,7 +5,7 @@ import { createPageMetadata } from '@/lib/seo'
 
 export const metadata: Metadata = createPageMetadata({
   title: 'About',
-  description: 'Senior Full Stack Developer profile, focus areas, and career highlights.',
+  description: 'Full Stack Developer profile, focus areas, and career highlights.',
   path: '/about',
   keywords: ['about serhat belen', 'full stack developer profile', 'software engineer bio'],
 })

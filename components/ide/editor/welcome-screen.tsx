@@ -25,7 +25,7 @@ export const WelcomeScreen = ({ onOpenFile }: WelcomeScreenProps) => {
     <div className='h-full flex flex-col items-center justify-center p-8 text-center overflow-auto'>
       <div className='max-w-2xl'>
         <h1 className='text-4xl font-bold text-foreground mb-2'>Serhat Belen</h1>
-        <p className='text-xl text-primary mb-8'>Senior Full Stack Developer</p>
+        <p className='text-xl text-primary mb-8'>Full Stack Developer</p>
 
         <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-8'>
           <WelcomeCard

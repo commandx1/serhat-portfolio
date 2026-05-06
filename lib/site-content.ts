@@ -21,10 +21,10 @@ export interface ContactItem {
 
 export const aboutSummary = {
   name: 'Serhat Belen',
-  title: 'Senior Full Stack Developer',
+  title: 'Full Stack Developer',
   experienceYears: '5+ years',
   description: [
-    'Senior Full Stack Developer focused on scalable backend systems and modern web applications.',
+    'Full Stack Developer focused on scalable backend systems and modern web applications.',
     'Works across Node.js and .NET ecosystems with event-driven patterns, RabbitMQ and async data pipelines.',
     'Strong focus on production performance, including Redis caching, memory profiling and reliability improvements.',
   ],
@@ -40,7 +40,7 @@ export const aboutHighlights: string[] = [
 export const workExperience: ExperienceItem[] = [
   {
     company: 'Onlay AI',
-    role: 'Senior Full Stack Developer',
+    role: 'Full Stack Developer',
     period: 'Jun 2025 – Present',
     techStack: ['Next.js', 'NestJS', 'TypeScript', 'MongoDB', 'PostgreSQL', 'RabbitMQ', 'Redis', 'AWS', 'LLM APIs'],
     achievements: [

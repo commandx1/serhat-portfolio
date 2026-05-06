@@ -2,10 +2,10 @@ import type { Metadata } from 'next'
 
 export const siteConfig = {
   name: 'Serhat Belen',
-  role: 'Senior Full Stack Developer',
-  title: 'Serhat Belen | Senior Full Stack Developer',
+  role: 'Full Stack Developer',
+  title: 'Serhat Belen | Full Stack Developer',
   description:
-    'Portfolio of Serhat Belen, Senior Full Stack Developer specialized in Node.js, React, TypeScript, scalable backend systems, and AI-powered product engineering.',
+    'Portfolio of Serhat Belen, Full Stack Developer specialized in Node.js, React, TypeScript, scalable backend systems, and AI-powered product engineering.',
   locale: 'en_US',
   siteUrl: (process.env.NEXT_PUBLIC_SITE_URL || 'https://serhatbelen.dev').replace(/\/+$/, ''),
   email: 'serhatbelen7@gmail.com',
@@ -15,7 +15,7 @@ export const siteConfig = {
   },
   keywords: [
     'Serhat Belen',
-    'Senior Full Stack Developer',
+    'Full Stack Developer',
     'Full Stack Developer Portfolio',
     'Node.js',
     'React',

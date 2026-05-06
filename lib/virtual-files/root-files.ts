@@ -92,7 +92,7 @@ Agent onceden tanimli cevaplari dondurur.`
       icon: '📄',
       content: `# Serhat Belen
 
-## Senior Full Stack Developer
+## Full Stack Developer
 
 Bu dokuman, teknik detaylara girmeden Serhat Belen'in profesyonel gecmisini, uzmanlik alanlarini ve projelerini ozetler.
 
@@ -105,7 +105,7 @@ Bu dokuman, teknik detaylara girmeden Serhat Belen'in profesyonel gecmisini, uzm
 - Website: serhatbelen.dev
 
 ## Profesyonel Ozet
-5+ yillik deneyime sahip bir Senior Full Stack Developer. Olceklenebilir backend sistemleri, modern web/mobil uygulamalar ve AI destekli urun gelistirme konularinda calisir. Node.js ekosistemi, .NET/C# ve event-driven mimarilerde gucludur.
+5+ yillik deneyime sahip bir Full Stack Developer. Olceklenebilir backend sistemleri, modern web/mobil uygulamalar ve AI destekli urun gelistirme konularinda calisir. Node.js ekosistemi, .NET/C# ve event-driven mimarilerde gucludur.
 
 ## Teknik Uzmanliklar
 
@@ -126,7 +126,7 @@ Docker, Dockerized Monorepo Deployments, AWS (EC2, S3, Lightsail), CI/CD Pipelin
 
 ## Is Deneyimi
 
-### Senior Full Stack Developer - Onlay AI
+### Full Stack Developer - Onlay AI
 Jun 2025 - Present
 
 Kullanilan teknolojiler: Next.js, NestJS, TypeScript, MongoDB, PostgreSQL, RabbitMQ, Redis, AWS, LLM APIs
@@ -192,7 +192,7 @@ Oyunun UI katmani ve client-side logic'i gelistirildi. Ekranlar ve interaktif ar
       icon: '📄',
       content: `# Serhat Belen
 
-## Senior Full Stack Developer
+## Full Stack Developer
 
 This document summarizes Serhat Belen's professional background, expertise, and projects for non-technical readers.
 
@@ -205,7 +205,7 @@ This document summarizes Serhat Belen's professional background, expertise, and 
 - Website: serhatbelen.dev
 
 ## Professional Summary
-Senior Full Stack Developer with 5+ years of experience building scalable backend systems and modern web/mobile applications. Strong in Node.js ecosystem technologies, .NET/C#, and event-driven architectures.
+Full Stack Developer with 5+ years of experience building scalable backend systems and modern web/mobile applications. Strong in Node.js ecosystem technologies, .NET/C#, and event-driven architectures.
 
 ## Technical Expertise
 
@@ -226,7 +226,7 @@ Docker, Dockerized Monorepo Deployments, AWS (EC2, S3, Lightsail), CI/CD Pipelin
 
 ## Work Experience
 
-### Senior Full Stack Developer - Onlay AI
+### Full Stack Developer - Onlay AI
 Jun 2025 - Present
 
 Technologies: Next.js, NestJS, TypeScript, MongoDB, PostgreSQL, RabbitMQ, Redis, AWS, LLM APIs

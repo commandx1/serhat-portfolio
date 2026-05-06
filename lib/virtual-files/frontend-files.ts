@@ -117,7 +117,7 @@ export function HeroHeader() {
   return (
     <header className="hero">
       <p className="hero-eyebrow">Serhat Belen</p>
-      <h1 className="hero-title">Senior Full Stack Developer</h1>
+      <h1 className="hero-title">Full Stack Developer</h1>
       <p className="hero-subtitle">
         A clear and simple overview of my background, projects, and contact information.
       </p>
@@ -275,7 +275,7 @@ export default AboutMe;`
       path: 'serhat-belen/frontend/src/data/about-description-paragraphs.ts',
       icon: '🧩',
       content: `export const aboutDescriptionParagraphs = [
-  "Senior Full Stack Developer with 5+ years of experience specializing in scalable backend systems and modern web applications.",
+  "Full Stack Developer with 5+ years of experience specializing in scalable backend systems and modern web applications.",
   "Proficient in Node.js ecosystem technologies, .NET/C#, and event-driven architectures with RabbitMQ and high-throughput async pipelines.",
   "Strong focus on performance optimization including Redis caching strategies and production memory-leak diagnostics.",
 ];`
@@ -290,7 +290,7 @@ export default AboutMe;`
 export function AboutRoleBadge() {
   return (
     <p className="text-lg text-[#9cc7ff] mt-2">
-      Senior Full Stack Developer · 5+ years
+      Full Stack Developer · 5+ years
     </p>
   );
 }`

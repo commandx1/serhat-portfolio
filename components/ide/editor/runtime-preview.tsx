@@ -34,11 +34,11 @@ const AboutPreview = () => (
     <div className='max-w-3xl'>
       <p className='text-xs uppercase tracking-[0.2em] text-(--ide-accent)'>About</p>
       <h1 className='text-3xl sm:text-4xl font-semibold mt-2 text-(--ide-text-bright)'>Serhat Belen</h1>
-      <p className='text-lg text-(--ide-accent-soft) mt-2'>Senior Full Stack Developer · 5+ years</p>
+      <p className='text-lg text-(--ide-accent-soft) mt-2'>Full Stack Developer · 5+ years</p>
 
       <div className='mt-6 space-y-4 text-(--ide-text-soft) leading-7'>
         <p>
-          Senior Full Stack Developer with 5+ years of experience specializing in scalable backend systems and modern web
+          Full Stack Developer with 5+ years of experience specializing in scalable backend systems and modern web
           applications.
         </p>
         <p>
@@ -108,7 +108,7 @@ const ExperiencePreview = () => (
         {[
           {
             company: 'Onlay AI',
-            role: 'Senior Full Stack Developer',
+            role: 'Full Stack Developer',
             period: 'Jun 2025 – Present',
             tech: ['Next.js', 'NestJS', 'TypeScript', 'MongoDB', 'RabbitMQ', 'AWS'],
             highlights: [
