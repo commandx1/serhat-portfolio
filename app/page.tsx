@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { IDELayout } from '@/components/ide/ide-layout';
+import { IDELayoutClient } from '@/components/ide/ide-layout-client';
 import { createPageMetadata } from '@/lib/seo';
 
 const pageMetadata = createPageMetadata({
@@ -41,7 +41,7 @@ export default function Home() {
                     </ul>
                 </div>
             </noscript>
-            <IDELayout />
+            <IDELayoutClient />
         </>
     );
 }
