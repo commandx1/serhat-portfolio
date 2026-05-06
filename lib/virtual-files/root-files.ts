@@ -142,7 +142,7 @@ Baslica katki ve sorumluluklar:
 ### Full Stack Developer - Avena / Retrace
 Apr 2021 - May 2025
 
-Kullanilan teknolojiler: React, Node.js, .NET (C#), MongoDB, Redis, RabbitMQ, Puppeteer, Docker
+Kullanilan teknolojiler: React, Node.js, MongoDB, Redis, RabbitMQ, Puppeteer, Docker
 
 Baslica katki ve sorumluluklar:
 - Dagitik klinik sistemleri icin yillik milyonlarca kaydi isleyen yuksek hacimli EDI servisleri gelistirdi.
@@ -242,7 +242,7 @@ Key contributions:
 ### Full Stack Developer - Avena / Retrace
 Apr 2021 - May 2025
 
-Technologies: React, Node.js, .NET (C#), MongoDB, Redis, RabbitMQ, Puppeteer, Docker
+Technologies: React, Node.js, MongoDB, Redis, RabbitMQ, Puppeteer, Docker
 
 Key contributions:
 - Developed high-throughput EDI services processing millions of healthcare records annually.

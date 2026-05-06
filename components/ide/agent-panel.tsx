@@ -6,9 +6,11 @@ import { cn } from '@/lib/utils'
 import { MessageList } from './agent/message-list'
 import { useAgentChat } from './agent/use-agent-chat'
 import { useState } from 'react'
+import { useIsMobile } from '@/components/ui/use-mobile'
 
 export const AgentPanel = () => {
   const [isMaximized, setIsMaximized] = useState(false)
+  const isMobile = useIsMobile()
   const { input, setInput, isTyping, chatMessages, messagesEndRef, sendMessage } = useAgentChat()
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
@@ -22,9 +24,11 @@ export const AgentPanel = () => {
     <div
       className={cn(
         'bg-sidebar border-l border-border flex flex-col transition-all duration-300',
-        isMaximized
+        isMobile
+          ? 'fixed inset-0 z-50 h-screen w-screen'
+          : isMaximized
           ? 'fixed inset-0 z-50'
-          : 'h-full w-full max-md:fixed max-md:inset-y-0 max-md:right-0 max-md:z-40 max-md:w-full max-md:max-w-sm',
+          : 'h-full w-full',
       )}
     >
       <div className="h-10 border-b border-border flex items-center justify-between px-3 bg-card">
@@ -36,14 +40,16 @@ export const AgentPanel = () => {
           <span className="text-xs px-1.5 py-0.5 bg-primary/20 text-primary rounded">Auto</span>
         </div>
 
-        <div className="flex items-center gap-1">
-          <button
-            onClick={() => setIsMaximized((prev) => !prev)}
-            className="p-1 hover:bg-muted rounded transition-colors"
-          >
-            {isMaximized ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
-          </button>
-        </div>
+        {!isMobile ? (
+          <div className="flex items-center gap-1">
+            <button
+              onClick={() => setIsMaximized((prev) => !prev)}
+              className="p-1 hover:bg-muted rounded transition-colors"
+            >
+              {isMaximized ? <Minimize2 className="h-4 w-4" /> : <Maximize2 className="h-4 w-4" />}
+            </button>
+          </div>
+        ) : null}
       </div>
 
       <MessageList chatMessages={chatMessages} isTyping={isTyping} messagesEndRef={messagesEndRef} />

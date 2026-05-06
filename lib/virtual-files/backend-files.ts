@@ -407,7 +407,6 @@ module.exports = {
     techStack: [
       "React",
       "Node.js",
-      ".NET (C#)",
       "MongoDB",
       "Redis",
       "RabbitMQ",

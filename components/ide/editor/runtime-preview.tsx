@@ -21,7 +21,7 @@ const BrowserPreviewFrame = ({
           <span className='h-2.5 w-2.5 rounded-full bg-[#28c840]' />
         </div>
         <div className='flex-1 max-w-xl mx-auto bg-(--ide-bg-elevated) border border-(--ide-border-strong) rounded-md h-7 px-3 text-xs text-(--ide-text-muted) flex items-center'>
-          https://serhatbelen.dev{path}
+          http://localhost:5173{path}
         </div>
       </div>
       <div className='h-[calc(100%-2.5rem)] overflow-auto bg-(--ide-bg-canvas) text-(--ide-text-main)'>{children}</div>
@@ -108,20 +108,25 @@ const ExperiencePreview = () => (
         {[
           {
             company: 'Onlay AI',
-            role: 'Full Stack Developer',
+            role: 'Senior Full Stack Developer',
             period: 'Jun 2025 – Present',
-            tech: ['Next.js', 'NestJS', 'TypeScript', 'MongoDB', 'RabbitMQ', 'AWS'],
+            tech: ['React', 'Recharts', 'Shadcn UI', 'Zustand', 'Node.js (NestJS)', 'MongoDB', 'RabbitMQ', 'AWS', 'LLM APIs'],
             highlights: [
-              'Designed modular plugin architecture for dynamic AI integrations',
-              'Built AI-powered features with LLM APIs and async pipelines',
+              'Designed real-time insurance eligibility verification pipelines with automated benefits parsing',
+              'Built an automated claims submission engine with attachment extraction, retries, and denial detection',
+              'Implemented LLM-powered document comprehension for claims processing and EOB parsing',
+              'Resolved critical production memory leaks through deep Node.js profiling',
             ],
           },
           {
             company: 'Avena – Retrace',
             role: 'Full Stack Developer',
             period: 'Apr 2021 – May 2025',
-            tech: ['React', 'Node.js', '.NET (C#)', 'Redis', 'Docker'],
-            highlights: ['Developed high-throughput EDI services for healthcare', 'Improved dashboard performance with Redis caching'],
+            tech: ['React', 'Zustand', 'Ant Design', 'Material UI', 'chartjs-2', 'Node.js', 'Express', 'RabbitMQ', 'Redis', 'Docker'],
+            highlights: [
+              'Developed high-throughput EDI services for healthcare',
+              'Implemented rich dashboards using MongoDB aggregation pipelines and Redis caching for high-performance analytics',
+            ],
           },
         ].map((job) => (
           <article key={job.company} className='rounded-xl border border-(--ide-border) bg-(--ide-bg-card) p-5'>

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
     return (
-        <>np
+        <>
             <noscript>
                 <div style={{ padding: '1rem', fontFamily: 'sans-serif' }}>
                     <h1>Serhat Belen - Full Stack Developer</h1>
