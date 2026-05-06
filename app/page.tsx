@@ -1,39 +1,47 @@
-import Container from '@mui/material/Container';
-import Grid from '@mui/material/Grid';
-import { useTranslations } from 'next-intl';
+import type { Metadata } from 'next';
 
-import ContactForm from '@/components/contact-form';
-import SkillSection from '@/components/home/skill-section';
-import Typed from '@/components/typed/typed';
-import AnimatedDiv from '@/utils/animations/AnimatedDiv';
+import { IDELayout } from '@/components/ide/ide-layout';
+import { createPageMetadata } from '@/lib/seo';
 
-import styles from './page.module.scss';
+const pageMetadata = createPageMetadata({
+    title: 'Serhat Belen - Full-Stack Developer',
+    description:
+    'Interactive IDE-style portfolio of Serhat Belen with projects, experience, contact details, and developer-focused workflow simulation.',
+    path: '/',
+    keywords: ['interactive portfolio', 'developer portfolio', 'IDE portfolio']
+});
+
+export const metadata: Metadata = {
+    ...pageMetadata,
+    title: {
+        absolute: 'Serhat Belen - Full-Stack Developer'
+    }
+};
 
 export default function Home() {
-    const t = useTranslations('HomePage');
-
     return (
-        <div className={styles.homeWrapper}>
-            <Container className={styles.home}>
-                <Grid className={styles.banner} container spacing={8}>
-                    <Grid size={{ xs: 12, lg: 6 }}>
-                        <AnimatedDiv>
-                            <Typed />
-                        </AnimatedDiv>
-                    </Grid>
-                    <Grid size={{ xs: 12, lg: 6 }}>
-                        <AnimatedDiv>
-                            <div className={styles.bannerContent}>
-                                <div className={[styles.dash, 'lineAnim'].join(' ')} />
-                                <div className={styles.desc}>{t('Hey')}</div>
-                                <div className={styles.subDesc}>{t('Desc')}</div>
-                            </div>
-                        </AnimatedDiv>
-                    </Grid>
-                </Grid>
-            </Container>
-            <SkillSection showProgress={false} />
-            <ContactForm />
-        </div>
+        <>np
+            <noscript>
+                <div style={{ padding: '1rem', fontFamily: 'sans-serif' }}>
+                    <h1>Serhat Belen - Full Stack Developer</h1>
+                    <p>Explore detailed pages for experience, projects, and contact information.</p>
+                    <ul>
+                        <li>
+                            <a href='/about'>About</a>
+                        </li>
+                        <li>
+                            <a href='/experience'>Experience</a>
+                        </li>
+                        <li>
+                            <a href='/projects'>Projects</a>
+                        </li>
+                        <li>
+                            <a href='/contact'>Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </noscript>
+            <IDELayout />
+        </>
     );
 }
