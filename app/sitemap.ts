@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next'
 import { siteConfig } from '@/lib/seo'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date('2026-05-06T00:00:00.000Z')
+  const lastModified = new Date('2026-05-15T00:00:00.000Z')
 
   return [
     {
@@ -34,6 +34,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
+    },
+    {
+      url: `${siteConfig.siteUrl}/privacy/zikirmatik-asistan`,
+      lastModified,
+      changeFrequency: 'yearly',
+      priority: 0.6,
     },
   ]
 }
