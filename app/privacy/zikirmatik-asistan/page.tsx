@@ -47,7 +47,7 @@ export default function ZikirmatikPrivacyPage() {
       <section className="mt-8">
         <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--ide-accent)]">Toplanan Veriler</h2>
         <ul className="mt-3 list-disc space-y-2 pl-5 text-[var(--ide-text-soft)]">
-          <li>Hesap verileri: ad-soyad, e-posta adresi, profil fotografi (Google ile giris durumunda) ve teknik kullanici ID'si.</li>
+          <li>Hesap verileri: ad-soyad, e-posta adresi, profil fotografi (Google ile giris durumunda) ve teknik kullanici ID&apos;si.</li>
           <li>Profil verileri: secilen sehir, tema tercihi, yazi tipi tercihi, onboarding tercihleri.</li>
           <li>Icerik verileri: zikir hedefleri, zikir loglari, tamamlanma ve seri bilgileri.</li>
           <li>Asistan giris verisi: kullanicinin yazdigi metin ve buna bagli oneriler.</li>
@@ -125,6 +125,18 @@ export default function ZikirmatikPrivacyPage() {
         <p className="mt-3 text-[var(--ide-text-soft)] leading-7">
           Bu politika zaman zaman guncellenebilir. Onemli degisikliklerde yurutme tarihi guncellenir ve uygun
           oldugunda uygulama icinden bilgilendirme yapilir.
+        </p>
+      </section>
+
+      <section className="mt-8">
+        <h2 className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--ide-accent)]">Hesap Silme</h2>
+        <p className="mt-3 text-[var(--ide-text-soft)] leading-7">
+          Hesabınızın ve ilişkili tüm verilerinizin silinmesini talep etmek için{' '}
+          <a className="text-[var(--ide-accent-soft)] hover:text-[var(--ide-text-bright)]" href="mailto:serhatbelen7.developer@gmail.com">
+            serhatbelen7.developer@gmail.com
+          </a>{' '}
+          adresine &quot;Hesap Silme&quot; konulu bir e-posta gönderebilirsiniz. Talebiniz doğrultusunda hesabınız
+          ve verileriniz 7 iş günü içinde kalıcı olarak silinecektir.
         </p>
       </section>
     </main>
