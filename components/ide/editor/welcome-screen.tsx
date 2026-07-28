@@ -1,3 +1,5 @@
+import { Download } from 'lucide-react'
+
 interface WelcomeScreenProps {
   onOpenFile: (fileId: string) => void
 }
@@ -43,6 +45,27 @@ export const WelcomeScreen = ({ onOpenFile }: WelcomeScreenProps) => {
             description='English Overview & Introduction'
             onClick={() => onOpenFile('resume')}
           />
+        </div>
+
+        <div className='flex flex-wrap justify-center gap-4 mb-8'>
+          <a
+            href='/SERHAT_BELEN_CV_EN.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-mono text-sm'
+          >
+            <Download className='w-4 h-4' />
+            Download CV (EN)
+          </a>
+          <a
+            href='/SERHAT_BELEN_CV_TR.pdf'
+            target='_blank'
+            rel='noopener noreferrer'
+            className='inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:opacity-90 transition-opacity font-mono text-sm'
+          >
+            <Download className='w-4 h-4' />
+            CV İndir (TR)
+          </a>
         </div>
 
         <div className='text-muted-foreground text-sm'>
